@@ -2,6 +2,7 @@
   <div class="col-md-3">
     <h4><%= @artist.name %></h4>
     <%= image_tag(@artist.image_url) =%>
+        <%= @artist.id =%>
   </div>
 </div>
 <div class="row">
@@ -13,3 +14,7 @@
     </div>
   <% end %>
 </div>
+
+  <div class="panel-body">
+      <%= render 'songs/form' %>
+  </div>

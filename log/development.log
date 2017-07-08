@@ -2269,3 +2269,2141 @@ Processing by ArtistsController#show as HTML
 Completed 200 OK in 131ms (Views: 84.2ms | ActiveRecord: 38.1ms)
 
 
+Started GET "/artists/15" for 127.0.0.1 at 2017-07-08 15:23:07 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  Rendered artists/show.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 102ms (Views: 74.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/artists/15" for 127.0.0.1 at 2017-07-08 15:31:45 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  Rendered artists/show.html.erb within layouts/application (848.7ms)
+Completed 500 Internal Server Error in 869ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_song_path' for #<#<Class:0x007fea86599ac0>:0x007fea89ead190>
+Did you mean?  new_artist_path):
+    12:       </div>
+    13:     </div>
+    14:   <% end %>
+    15: </div>
+    16: <%= link_to "Add new song", new_song_path, class: "btn btn-primary" %>
+  
+app/views/artists/show.html.erb:15:in `_app_views_artists_show_html_erb___4141985136274382994_70322656472500'
+Started GET "/artists/15" for 127.0.0.1 at 2017-07-08 15:35:26 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (1.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  Rendered artists/show.html.erb within layouts/application (117.6ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 52.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :id=>"15"}, missing required keys: [:artist_id]):
+    12:       </div>
+    13:     </div>
+    14:   <% end %>
+    15: </div>
+    16: <%= link_to "Add new song", new_artist_song_path, class: "btn btn-primary" %>
+  
+app/views/artists/show.html.erb:15:in `_app_views_artists_show_html_erb___4141985136274382994_70322668238920'
+Started GET "/artists/15" for 127.0.0.1 at 2017-07-08 15:36:30 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (1.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  Rendered artists/show.html.erb within layouts/application (732.5ms)
+Completed 500 Internal Server Error in 750ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artist' for #<#<Class:0x007fea8b51e6b8>:0x007fea89a07d98>
+Did you mean?  @artist):
+    12:       </div>
+    13:     </div>
+    14:   <% end %>
+    15: </div>
+    16: <%= link_to "Add new song", new_artist_song_path(artist[id]), class: "btn btn-primary" %>
+  
+app/views/artists/show.html.erb:15:in `_app_views_artists_show_html_erb___4141985136274382994_70322654063460'
+Started GET "/artists/15" for 127.0.0.1 at 2017-07-08 15:36:54 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  Rendered artists/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 68ms (Views: 61.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 15:37:01 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+Completed 500 Internal Server Error in 314ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_artist' for #<SongsController:0x007fea865683d0>):
+  
+app/controllers/songs_controller.rb:4:in `new'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 15:37:56 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+Completed 500 Internal Server Error in 529ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `artist' for #<SongsController:0x007fea8c8828a8>
+Did you mean?  artist_url):
+  
+app/controllers/songs_controller.rb:23:in `current_artist'
+app/controllers/songs_controller.rb:4:in `new'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 15:38:27 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:23:in `current_artist'
+app/controllers/songs_controller.rb:4:in `new'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 15:47:22 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:23:in `current_artist'
+app/controllers/songs_controller.rb:4:in `new'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 15:47:45 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (226.3ms)
+  Rendered songs/new.html.erb within layouts/application (231.7ms)
+Completed 500 Internal Server Error in 314ms (ActiveRecord: 24.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs_path' for #<#<Class:0x007fea8b26f980>:0x007fea8b26dd38>):
+    1: <%= form_for @song do |song| %>
+    2:   <div class="form-group">
+    3:     <label>Listing name</label>
+    4:     <%= song.text_field :name, placeholder: "Song name", class: "form-control" %>
+  
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__4110296050499793545_70322631176920'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322666848560'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 15:47:58 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `build' for #<Class:0x007fea89b47910>):
+  
+app/controllers/songs_controller.rb:4:in `new'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 15:48:49 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `build' for #<Class:0x007fea8c974568>):
+  
+app/controllers/songs_controller.rb:4:in `new'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:02:35 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (272.7ms)
+  Rendered songs/new.html.erb within layouts/application (295.5ms)
+Completed 500 Internal Server Error in 353ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs_path' for #<#<Class:0x007fea86e76b20>:0x007fea86e74eb0>):
+    1: <%= form_for @song do |song| %>
+    2:   <div class="form-group">
+    3:     <label>Listing name</label>
+    4:     <%= song.text_field :name, placeholder: "Song name", class: "form-control" %>
+  
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__4110296050499793545_70322631895660'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322631195100'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:04:50 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (260.0ms)
+  Rendered songs/new.html.erb within layouts/application (264.0ms)
+Completed 500 Internal Server Error in 279ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs_path' for #<#<Class:0x007fea86e76b20>:0x007fea8b9b5e38>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song do |f| %>
+    4:   <%= f.label :name %>
+    5:   <%= f.text_field :name %>
+    6: 
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322667122440'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322670646280'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:05:38 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (6.8ms)
+  Rendered songs/new.html.erb within layouts/application (10.9ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @songs do |f| %>
+    4:   <%= f.label :name %>
+    5:   <%= f.text_field :name %>
+    6: 
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322656145780'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322667721360'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:05:49 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (6.8ms)
+  Rendered songs/new.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @Song do |f| %>
+    4:   <%= f.label :name %>
+    5:   <%= f.text_field :name %>
+    6: 
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322635772080'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322630370420'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:12:57 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (3.4ms)
+  Rendered songs/new.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/views/songs/_form.html.erb:3: syntax error, unexpected ':', expecting keyword_end
+ffer.append=  form_for @Song :url => create_song_artist_path
+                              ^):
+  
+app/views/songs/_form.html.erb:3: syntax error, unexpected ':', expecting keyword_end
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322666133680'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:13:23 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (580.7ms)
+  Rendered songs/new.html.erb within layouts/application (586.0ms)
+Completed 500 Internal Server Error in 603ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `create_song_artist_path' for #<#<Class:0x007fea86e76b20>:0x007fea89e4f838>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @Song, :url => create_song_artist_path(@artist) do |f| %>
+    4:   <%= f.label :name %>
+    5:   <%= f.text_field :name %>
+    6: 
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322667781400'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322670838100'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:15:48 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (676.4ms)
+  Rendered songs/new.html.erb within layouts/application (685.1ms)
+Completed 500 Internal Server Error in 732ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `create_song_artist_path' for #<#<Class:0x007fea89e8d8e0>:0x007fea8c947c48>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song, :url => create_song_artist_path(@artist) do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322667957380'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322656407820'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:16:30 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (438.3ms)
+  Rendered songs/new.html.erb within layouts/application (443.1ms)
+Completed 500 Internal Server Error in 464ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `create_song_artist_path' for #<#<Class:0x007fea89e8d8e0>:0x007fea87599100>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song, :url => create_song_artist_path(@artist) do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322634968180'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322634937580'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:18:11 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (5.5ms)
+  Rendered songs/new.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :artist_id=>nil, :controller=>"songs"}, missing required keys: [:artist_id]):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song, :url => new_artist_song_path(@artist) do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322653930640'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322630435760'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:19:35 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (256.2ms)
+  Rendered songs/new.html.erb within layouts/application (262.9ms)
+Completed 500 Internal Server Error in 280ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs_path' for #<#<Class:0x007fea89e8d8e0>:0x007fea8b8e9d60>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322670218540'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322670228900'
+Started GET "/artists/15/songs/" for 127.0.0.1 at 2017-07-08 16:19:53 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/artists/15/songs"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/artists/15/" for 127.0.0.1 at 2017-07-08 16:20:13 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  Rendered artists/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 73ms (Views: 43.6ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:20:25 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (298.7ms)
+  Rendered songs/new.html.erb within layouts/application (304.4ms)
+Completed 500 Internal Server Error in 337ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs_path' for #<#<Class:0x007fea89e8d8e0>:0x007fea85eed050>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322654411500'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322623048980'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:20:54 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (240.4ms)
+  Rendered songs/new.html.erb within layouts/application (245.2ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs_path' for #<#<Class:0x007fea89e8d8e0>:0x007fea85f63110>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322630838720'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322623299900'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:21:05 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 84ms (Views: 76.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:22:18 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (234.1ms)
+  Rendered songs/new.html.erb within layouts/application (239.2ms)
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs_path' for #<#<Class:0x007fea89e8d8e0>:0x007fea86da5660>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322623221560'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322630766620'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:23:21 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (583.2ms)
+  Rendered songs/new.html.erb within layouts/application (588.2ms)
+Completed 500 Internal Server Error in 682ms (ActiveRecord: 41.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs_path' for #<#<Class:0x007fea89ac5258>:0x007fea89abed40>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322665640480'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322654424460'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:25:11 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (680.7ms)
+  Rendered songs/new.html.erb within layouts/application (688.8ms)
+Completed 500 Internal Server Error in 832ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs_path' for #<#<Class:0x007fea89955a80>:0x007fea85ddce18>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for @song do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322622426560'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322653673940'
+Started POST "/__web_console/repl_sessions/6891efddf9def3e4457788dce476fc6f/trace" for 127.0.0.1 at 2017-07-08 16:25:41 +0200
+Started POST "/__web_console/repl_sessions/6891efddf9def3e4457788dce476fc6f/trace" for 127.0.0.1 at 2017-07-08 16:25:46 +0200
+Started POST "/__web_console/repl_sessions/6891efddf9def3e4457788dce476fc6f/trace" for 127.0.0.1 at 2017-07-08 16:25:48 +0200
+Started POST "/__web_console/repl_sessions/6891efddf9def3e4457788dce476fc6f/trace" for 127.0.0.1 at 2017-07-08 16:25:49 +0200
+Started POST "/__web_console/repl_sessions/6891efddf9def3e4457788dce476fc6f/trace" for 127.0.0.1 at 2017-07-08 16:25:52 +0200
+Started POST "/__web_console/repl_sessions/6891efddf9def3e4457788dce476fc6f/trace" for 127.0.0.1 at 2017-07-08 16:25:54 +0200
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:29:34 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (35.1ms)
+  Rendered songs/new.html.erb within layouts/application (42.8ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@artist, @artist.songs.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322633136480'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322626500720'
+Started GET "/artists/15/" for 127.0.0.1 at 2017-07-08 16:30:46 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  Rendered songs/_form.html.erb (87.7ms)
+  Rendered artists/show.html.erb within layouts/application (106.1ms)
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 45.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<Song:0x007fea85f14a10>):
+     6:   <%= f.text_field :name %>
+     7: 
+     8:   <%= f.label :image_url %>
+     9:   <%= f.text_field :image_url %>
+    10: 
+    11:   <%= f.submit "Create" %>
+    12: <% end %>
+  
+app/views/songs/_form.html.erb:9:in `block in _app_views_songs__form_html_erb__4110296050499793545_70322630700960'
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322630700960'
+app/views/artists/show.html.erb:17:in `_app_views_artists_show_html_erb___4141985136274382994_70322630767200'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:31:02 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (16.6ms)
+  Rendered songs/new.html.erb within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@artist, @artist.songs.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322669752840'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322631060680'
+Started GET "/artists/15/songs/new" for 127.0.0.1 at 2017-07-08 16:32:18 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"15"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (9.9ms)
+  Rendered songs/new.html.erb within layouts/application (16.1ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@artist, @artist.songs.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322631243780'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322655776520'
+Started GET "/artists/15" for 127.0.0.1 at 2017-07-08 16:32:25 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  Rendered songs/_form.html.erb (37.8ms)
+  Rendered artists/show.html.erb within layouts/application (121.9ms)
+Completed 500 Internal Server Error in 458ms (ActiveRecord: 51.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<Song:0x007fea8b32e5b0>):
+     6:   <%= f.text_field :name %>
+     7: 
+     8:   <%= f.label :image_url %>
+     9:   <%= f.text_field :image_url %>
+    10: 
+    11:   <%= f.submit "Create" %>
+    12: <% end %>
+  
+app/views/songs/_form.html.erb:9:in `block in _app_views_songs__form_html_erb__4110296050499793545_70322667241300'
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322667241300'
+app/views/artists/show.html.erb:17:in `_app_views_artists_show_html_erb___4141985136274382994_70322667388360'
+Started GET "/" for 127.0.0.1 at 2017-07-08 16:35:48 +0200
+  
+ActionController::RoutingError (uninitialized constant PagesController):
+  
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.2) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-08 16:36:16 +0200
+  
+ActionController::RoutingError (uninitialized constant PagesController):
+  
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.2) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.2) lib/action_dispatch/http/request.rb:82:in `controller_class'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:46:in `block in serve'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.2) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.2) lib/action_dispatch/routing/route_set.rb:832:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.2) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.2) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/artists/" for 127.0.0.1 at 2017-07-08 16:36:28 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (73.4ms)
+Completed 200 OK in 236ms (Views: 198.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists/13" for 127.0.0.1 at 2017-07-08 16:36:51 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 13]]
+  Rendered artists/show.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 168ms (Views: 107.0ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/artists/13" for 127.0.0.1 at 2017-07-08 16:37:56 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 13]]
+  Rendered artists/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 98ms (Views: 63.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/artists/13" for 127.0.0.1 at 2017-07-08 16:45:44 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (1.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 13]]
+  Rendered artists/show.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 204ms (Views: 180.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 16:45:57 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"13"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (14.9ms)
+  Rendered songs/new.html.erb within layouts/application (23.2ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `songs' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@song, @artist.songs.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322666128460'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322630969520'
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 16:46:12 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"13"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (11.5ms)
+  Rendered songs/new.html.erb within layouts/application (15.9ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@song, @artist.song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322670677360'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322655926820'
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 16:46:28 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"13"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (5.9ms)
+  Rendered songs/new.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@songs, @artist.song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322668085300'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322668107040'
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 16:46:58 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"13"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (14.9ms)
+  Rendered songs/new.html.erb within layouts/application (19.1ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `Song' for #<Class:0x007fea89f4c948>):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@song, Artist.Song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322635479420'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322635493060'
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 16:47:45 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"13"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (5.9ms)
+  Rendered songs/new.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@song, @artist.song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb__4110296050499793545_70322665992380'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___2786832529048058866_70322666011120'
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 16:56:35 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"13"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:23:in `current_artist'
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 16:59:51 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected keyword_end, expecting end-of-input
+  end
+     ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 17:00:08 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"13"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:21:in `current_artist'
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 17:01:48 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"13"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:21:in `current_artist'
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 17:05:59 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected keyword_end, expecting end-of-input
+  end
+     ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 17:07:43 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected keyword_end, expecting end-of-input
+  end
+     ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected keyword_end, expecting end-of-input
+  [1m[35m (11.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (1.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (10.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "name" character varying, "album" character varying, "length" time, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "artist_id" bigint)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_songs_on_artist_id" ON "songs"  ("artist_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mALTER TABLE "songs" ADD CONSTRAINT "fk_rails_5ce8fd4cc7"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (4.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "name" character varying, "album" character varying, "length" time, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "artist_id" bigint)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_songs_on_artist_id" ON "songs"  ("artist_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mALTER TABLE "songs" ADD CONSTRAINT "fk_rails_5ce8fd4cc7"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Iggy Pop"], ["created_at", "2017-07-08 15:08:49.526586"], ["updated_at", "2017-07-08 15:08:49.526586"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514719/6bec6f659fef26410d3df95dadff156a--iggy-pop-iggy-iggy_xag3bd.jpg"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Beatles"], ["created_at", "2017-07-08 15:08:49.535092"], ["updated_at", "2017-07-08 15:08:49.535092"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514762/TheBeatles_bvb4na.jpg"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (59.9ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Rolling Stones"], ["created_at", "2017-07-08 15:08:49.540392"], ["updated_at", "2017-07-08 15:08:49.540392"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514839/rs-134713-20131007-stones2-x306-1381179560-1381341128_on4ixz.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Buena vista social club"], ["created_at", "2017-07-08 15:08:49.611275"], ["updated_at", "2017-07-08 15:08:49.611275"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514873/Current_28792id_001_large_e3lclg.jpg"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bret Domino trio"], ["created_at", "2017-07-08 15:08:49.617552"], ["updated_at", "2017-07-08 15:08:49.617552"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514934/300x300_pfiy7k.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Led Zeppelin"], ["created_at", "2017-07-08 15:08:49.623374"], ["updated_at", "2017-07-08 15:08:49.623374"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514795/ledzeppelin1973_gruen_webuseonly_qisl6i.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "In Twilight"], ["created_at", "2017-07-08 15:08:49.702585"], ["updated_at", "2017-07-08 15:08:49.702585"], ["artist_id", 3]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Shoreline"], ["created_at", "2017-07-08 15:08:49.712728"], ["updated_at", "2017-07-08 15:08:49.712728"], ["artist_id", 6]]
+  [1m[35m (32.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Tide"], ["created_at", "2017-07-08 15:08:49.748841"], ["updated_at", "2017-07-08 15:08:49.748841"], ["artist_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Dive"], ["created_at", "2017-07-08 15:08:49.752105"], ["updated_at", "2017-07-08 15:08:49.752105"], ["artist_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Swell"], ["created_at", "2017-07-08 15:08:49.754874"], ["updated_at", "2017-07-08 15:08:49.754874"], ["artist_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Silver Cloud"], ["created_at", "2017-07-08 15:08:49.757532"], ["updated_at", "2017-07-08 15:08:49.757532"], ["artist_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sunshine"], ["created_at", "2017-07-08 15:08:49.760289"], ["updated_at", "2017-07-08 15:08:49.760289"], ["artist_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "In Bloom"], ["created_at", "2017-07-08 15:08:49.762868"], ["updated_at", "2017-07-08 15:08:49.762868"], ["artist_id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Above The Auroras"], ["created_at", "2017-07-08 15:08:49.770816"], ["updated_at", "2017-07-08 15:08:49.770816"], ["artist_id", 6]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Through The Silence"], ["created_at", "2017-07-08 15:08:49.779511"], ["updated_at", "2017-07-08 15:08:49.779511"], ["artist_id", 6]]
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Into The Heavens"], ["created_at", "2017-07-08 15:08:49.795577"], ["updated_at", "2017-07-08 15:08:49.795577"], ["artist_id", 4]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Wind In The Trees"], ["created_at", "2017-07-08 15:08:49.805335"], ["updated_at", "2017-07-08 15:08:49.805335"], ["artist_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Stillness In The Woods"], ["created_at", "2017-07-08 15:08:49.809469"], ["updated_at", "2017-07-08 15:08:49.809469"], ["artist_id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Under The Shade"], ["created_at", "2017-07-08 15:08:49.817373"], ["updated_at", "2017-07-08 15:08:49.817373"], ["artist_id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Silver Cloud (Goodnight Mix)"], ["created_at", "2017-07-08 15:08:49.822806"], ["updated_at", "2017-07-08 15:08:49.822806"], ["artist_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "In Twilight (The Dream Mix)"], ["created_at", "2017-07-08 15:08:49.826917"], ["updated_at", "2017-07-08 15:08:49.826917"], ["artist_id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Through The Silence (The Dawn Mix)"], ["created_at", "2017-07-08 15:08:49.830897"], ["updated_at", "2017-07-08 15:08:49.830897"], ["artist_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Indigo"], ["created_at", "2017-07-08 15:08:49.835979"], ["updated_at", "2017-07-08 15:08:49.835979"], ["artist_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Violet"], ["created_at", "2017-07-08 15:08:49.839653"], ["updated_at", "2017-07-08 15:08:49.839653"], ["artist_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "After Violet"], ["created_at", "2017-07-08 15:08:49.842320"], ["updated_at", "2017-07-08 15:08:49.842320"], ["artist_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Slient Night"], ["created_at", "2017-07-08 15:08:49.844831"], ["updated_at", "2017-07-08 15:08:49.844831"], ["artist_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Moonlight Sonata"], ["created_at", "2017-07-08 15:08:49.847357"], ["updated_at", "2017-07-08 15:08:49.847357"], ["artist_id", 5]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lullaby"], ["created_at", "2017-07-08 15:08:49.849985"], ["updated_at", "2017-07-08 15:08:49.849985"], ["artist_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Starless Night"], ["created_at", "2017-07-08 15:08:49.852916"], ["updated_at", "2017-07-08 15:08:49.852916"], ["artist_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lull"], ["created_at", "2017-07-08 15:08:49.855485"], ["updated_at", "2017-07-08 15:08:49.855485"], ["artist_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Whispers"], ["created_at", "2017-07-08 15:08:49.858235"], ["updated_at", "2017-07-08 15:08:49.858235"], ["artist_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Prelude"], ["created_at", "2017-07-08 15:08:49.860764"], ["updated_at", "2017-07-08 15:08:49.860764"], ["artist_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ghosts"], ["created_at", "2017-07-08 15:08:49.863567"], ["updated_at", "2017-07-08 15:08:49.863567"], ["artist_id", 4]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nostalgia"], ["created_at", "2017-07-08 15:08:49.872033"], ["updated_at", "2017-07-08 15:08:49.872033"], ["artist_id", 4]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Finis"], ["created_at", "2017-07-08 15:08:49.881725"], ["updated_at", "2017-07-08 15:08:49.881725"], ["artist_id", 4]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Thousand Lights"], ["created_at", "2017-07-08 15:08:49.890950"], ["updated_at", "2017-07-08 15:08:49.890950"], ["artist_id", 4]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ascending"], ["created_at", "2017-07-08 15:08:49.899538"], ["updated_at", "2017-07-08 15:08:49.899538"], ["artist_id", 2]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "One And Only"], ["created_at", "2017-07-08 15:08:49.907784"], ["updated_at", "2017-07-08 15:08:49.907784"], ["artist_id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Forever"], ["created_at", "2017-07-08 15:08:49.912160"], ["updated_at", "2017-07-08 15:08:49.912160"], ["artist_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Depths Of Love"], ["created_at", "2017-07-08 15:08:49.915867"], ["updated_at", "2017-07-08 15:08:49.915867"], ["artist_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The End And The Beginning"], ["created_at", "2017-07-08 15:08:49.919066"], ["updated_at", "2017-07-08 15:08:49.919066"], ["artist_id", 5]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fathom"], ["created_at", "2017-07-08 15:08:49.925161"], ["updated_at", "2017-07-08 15:08:49.925161"], ["artist_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brilliance"], ["created_at", "2017-07-08 15:08:49.929008"], ["updated_at", "2017-07-08 15:08:49.929008"], ["artist_id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 2]]
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 3]]
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 4]]
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 5]]
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 6]]
+Started GET "/artists/13/songs/new" for 127.0.0.1 at 2017-07-08 17:10:17 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected keyword_end, expecting end-of-input
+  end
+     ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/artists" for 127.0.0.1 at 2017-07-08 17:11:00 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (81.7ms)
+Completed 200 OK in 729ms (Views: 657.8ms | ActiveRecord: 21.6ms)
+
+
+Started GET "/artists/1" for 127.0.0.1 at 2017-07-08 17:11:16 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered artists/show.html.erb within layouts/application (87.3ms)
+Completed 200 OK in 274ms (Views: 206.9ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:11:20 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:32: syntax error, unexpected ':', expecting ')'
+          :name :length :artist
+                 ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:33: syntax error, unexpected ')', expecting keyword_end
+        )
+         ^):
+  
+app/controllers/songs_controller.rb:32: syntax error, unexpected ':', expecting ')'
+app/controllers/songs_controller.rb:33: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:13:01 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+          :name :length :artist
+                 ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+        )
+         ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:13:14 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+          :name :length :artist
+                 ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+        )
+         ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:13:23 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+          :name :length :artist
+                 ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+        )
+         ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:13:30 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+          :name :length :artist
+                 ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+        )
+         ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:13:44 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+          :name :length :artist
+                 ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+        )
+         ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:14:08 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+          :name :length :artist
+                 ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+        )
+         ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:14:37 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+          :name :length :artist
+                 ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+        )
+         ^):
+  
+app/controllers/songs_controller.rb:35: syntax error, unexpected ':', expecting ')'
+app/controllers/songs_controller.rb:36: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:14:45 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (11.2ms)
+  Rendered songs/new.html.erb within layouts/application (18.8ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@song, @artist.song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb___1536438886321783968_70336825835200'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___3948731668635750052_70336791302120'
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:15:02 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+Completed 500 Internal Server Error in 775ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `artist' for #<SongsController:0x007ff11ffe7960>
+Did you mean?  artist_url):
+  
+app/controllers/songs_controller.rb:24:in `set_artist'
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:15:21 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:24:in `set_artist'
+Started POST "/__web_console/repl_sessions/ac45f8d524dbc9ca9eb476b133ed8d58/trace" for 127.0.0.1 at 2017-07-08 17:15:45 +0200
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:16:02 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 62ms (ActiveRecord: 7.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=):
+  
+app/controllers/songs_controller.rb:24:in `set_artist'
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:16:33 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[36mSong Load (8.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 78ms (ActiveRecord: 38.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=):
+  
+app/controllers/songs_controller.rb:24:in `set_artist'
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:16:44 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[36mSong Load (1.1ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (10.0ms)
+  Rendered songs/new.html.erb within layouts/application (16.2ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@song, @artist.song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb___1536438886321783968_70336838910920'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___3948731668635750052_70336790582900'
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:16:57 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (9.0ms)
+  Rendered songs/new.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@song, @artist.song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb___1536438886321783968_70336827039000'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___3948731668635750052_70336830925620'
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:17:28 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:24:in `set_artist'
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:19:40 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/views/artists/show.html.erb:4: syntax error, unexpected ')', expecting keyword_end
+_buffer.append=( @artist.id) );@output_buffer.safe_append=' 
+                              ^):
+  
+app/views/artists/show.html.erb:4: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:19:52 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (3.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered artists/show.html.erb within layouts/application (90.0ms)
+Completed 200 OK in 216ms (Views: 185.6ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:20:25 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:24:in `set_artist'
+Started GET "/artists/1/songs/new" for 127.0.0.1 at 2017-07-08 17:24:21 +0200
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (18.0ms)
+  Rendered songs/new.html.erb within layouts/application (40.9ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for nil:NilClass):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@song, @artist.song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb___1536438886321783968_70336826574880'
+app/views/songs/new.html.erb:7:in `_app_views_songs_new_html_erb___3948731668635750052_70336834450900'
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:25:42 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (12.6ms)
+  Rendered artists/show.html.erb within layouts/application (55.6ms)
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 14.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for #<Artist:0x007ff1234b3630>
+Did you mean?  songs):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@song, @artist.song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb___1536438886321783968_70336831333980'
+app/views/artists/show.html.erb:17:in `_app_views_artists_show_html_erb___864600787983681900_70336827986220'
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:25:58 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (2.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (0.7ms)
+  Rendered artists/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 79ms (Views: 61.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:27:04 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (12.0ms)
+  Rendered artists/show.html.erb within layouts/application (20.8ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `song' for #<Artist:0x007ff11fd75218>
+Did you mean?  songs):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@artist, @artist.song.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb___1536438886321783968_70336795661000'
+app/views/artists/show.html.erb:17:in `_app_views_artists_show_html_erb___864600787983681900_70336799011360'
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:27:55 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (376.0ms)
+  Rendered artists/show.html.erb within layouts/application (385.0ms)
+Completed 500 Internal Server Error in 406ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `artist_songs_path' for #<#<Class:0x007ff1234b1920>:0x007ff1231e5ac0>
+Did you mean?  artist_song_path
+               artists_path
+               artist_song_url):
+    1: <h1>New song</h1>
+    2: 
+    3: <%= form_for [@artist, @artist.songs.new] do |f| %>
+    4: 
+    5:   <%= f.label :name %>
+    6:   <%= f.text_field :name %>
+  
+app/views/songs/_form.html.erb:3:in `_app_views_songs__form_html_erb___1536438886321783968_70336826508160'
+app/views/artists/show.html.erb:17:in `_app_views_artists_show_html_erb___864600787983681900_70336826520140'
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:31:21 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (58.3ms)
+  Rendered artists/show.html.erb within layouts/application (92.2ms)
+Completed 200 OK in 232ms (Views: 196.6ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:31:46 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KvtzgqN8H8pF02uqFpS95wr8XST7b3InjKdoHyN5mP7CYy1efD605l3E/XicocIsNDaTFsqTqjJ9dY2n3BNBKQ==", "song"=>{"name"=>"Test", "length"=>"1234", "artist_id"=>"1"}, "commit"=>"Create", "artist_id"=>"1"}
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 211ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:33:11 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (9.7ms)
+  Rendered artists/show.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 294ms (Views: 267.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:33:58 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (9.7ms)
+  Rendered artists/show.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 119ms (Views: 94.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:34:07 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:38: syntax error, unexpected keyword_end, expecting end-of-input
+  end
+     ^):
+  
+app/controllers/songs_controller.rb:38: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/artists/" for 127.0.0.1 at 2017-07-08 17:38:22 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 92ms (Views: 80.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists/1" for 127.0.0.1 at 2017-07-08 17:38:35 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (6.4ms)
+  Rendered artists/show.html.erb within layouts/application (54.5ms)
+Completed 200 OK in 157ms (Views: 101.2ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/artists/1" for 127.0.0.1 at 2017-07-08 17:40:09 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (9.5ms)
+  Rendered artists/show.html.erb within layouts/application (65.9ms)
+Completed 200 OK in 224ms (Views: 156.4ms | ActiveRecord: 39.2ms)
+
+
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:40:19 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(@artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:8: syntax error, unexpected ')', expecting keyword_end
+ge(@artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:38: syntax error, unexpected keyword_end, expecting end-of-input
+  end
+     ^):
+  
+app/controllers/songs_controller.rb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:8: syntax error, unexpected ')', expecting keyword_end
+app/controllers/songs_controller.rb:38: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:40:23 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (16.5ms)
+  Rendered artists/show.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 74ms (Views: 66.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:40:24 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (5.4ms)
+  Rendered artists/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 130ms (Views: 93.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/artists/1/" for 127.0.0.1 at 2017-07-08 17:41:53 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (12.6ms)
+  Rendered artists/show.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 216ms (Views: 195.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:42:02 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(@artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:8: syntax error, unexpected ')', expecting keyword_end
+ge(@artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:38: syntax error, unexpected keyword_end, expecting end-of-input
+  end
+     ^):
+  
+app/controllers/songs_controller.rb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:8: syntax error, unexpected ')', expecting keyword_end
+app/controllers/songs_controller.rb:38: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:44:47 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:19: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:19: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1" for 127.0.0.1 at 2017-07-08 17:44:52 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (31.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (11.7ms)
+  Rendered artists/show.html.erb within layouts/application (65.7ms)
+Completed 200 OK in 234ms (Views: 147.6ms | ActiveRecord: 32.2ms)
+
+
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:44:59 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:19: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:19: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1" for 127.0.0.1 at 2017-07-08 17:45:04 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (5.9ms)
+  Rendered artists/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 274ms (Views: 116.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:45:11 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:19: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:19: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1" for 127.0.0.1 at 2017-07-08 17:46:01 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (10.7ms)
+  Rendered artists/show.html.erb within layouts/application (69.1ms)
+Completed 200 OK in 216ms (Views: 130.7ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:46:10 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/1" for 127.0.0.1 at 2017-07-08 17:49:27 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  Rendered songs/_form.html.erb (9.8ms)
+  Rendered artists/show.html.erb within layouts/application (59.1ms)
+Completed 200 OK in 156ms (Views: 128.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:49:36 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+Started POST "/artists/1/songs" for 127.0.0.1 at 2017-07-08 17:49:42 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+  [1m[35m (20.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (1.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (8.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  [1m[35m (28.1ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  [1m[35m (28.3ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "name" character varying, "album" character varying, "length" time, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "artist_id" bigint)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_songs_on_artist_id" ON "songs"  ("artist_id")[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "songs" ADD CONSTRAINT "fk_rails_5ce8fd4cc7"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+[0m
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (43.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "name" character varying, "album" character varying, "length" time, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "artist_id" bigint)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_songs_on_artist_id" ON "songs"  ("artist_id")[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "songs" ADD CONSTRAINT "fk_rails_5ce8fd4cc7"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Iggy Pop"], ["created_at", "2017-07-08 15:50:29.973656"], ["updated_at", "2017-07-08 15:50:29.973656"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514719/6bec6f659fef26410d3df95dadff156a--iggy-pop-iggy-iggy_xag3bd.jpg"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Beatles"], ["created_at", "2017-07-08 15:50:29.986372"], ["updated_at", "2017-07-08 15:50:29.986372"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514762/TheBeatles_bvb4na.jpg"]]
+  [1m[35m (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Rolling Stones"], ["created_at", "2017-07-08 15:50:29.993302"], ["updated_at", "2017-07-08 15:50:29.993302"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514839/rs-134713-20131007-stones2-x306-1381179560-1381341128_on4ixz.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Buena vista social club"], ["created_at", "2017-07-08 15:50:29.996992"], ["updated_at", "2017-07-08 15:50:29.996992"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514873/Current_28792id_001_large_e3lclg.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bret Domino trio"], ["created_at", "2017-07-08 15:50:30.000362"], ["updated_at", "2017-07-08 15:50:30.000362"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514934/300x300_pfiy7k.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Led Zeppelin"], ["created_at", "2017-07-08 15:50:30.003739"], ["updated_at", "2017-07-08 15:50:30.003739"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514795/ledzeppelin1973_gruen_webuseonly_qisl6i.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mSong Load (1.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "In Twilight"], ["created_at", "2017-07-08 15:50:30.047063"], ["updated_at", "2017-07-08 15:50:30.047063"], ["artist_id", 5]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Shoreline"], ["created_at", "2017-07-08 15:50:30.056490"], ["updated_at", "2017-07-08 15:50:30.056490"], ["artist_id", 1]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Tide"], ["created_at", "2017-07-08 15:50:30.071261"], ["updated_at", "2017-07-08 15:50:30.071261"], ["artist_id", 2]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Dive"], ["created_at", "2017-07-08 15:50:30.080475"], ["updated_at", "2017-07-08 15:50:30.080475"], ["artist_id", 1]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Swell"], ["created_at", "2017-07-08 15:50:30.089254"], ["updated_at", "2017-07-08 15:50:30.089254"], ["artist_id", 6]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Silver Cloud"], ["created_at", "2017-07-08 15:50:30.094245"], ["updated_at", "2017-07-08 15:50:30.094245"], ["artist_id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sunshine"], ["created_at", "2017-07-08 15:50:30.098741"], ["updated_at", "2017-07-08 15:50:30.098741"], ["artist_id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "In Bloom"], ["created_at", "2017-07-08 15:50:30.104108"], ["updated_at", "2017-07-08 15:50:30.104108"], ["artist_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Above The Auroras"], ["created_at", "2017-07-08 15:50:30.112421"], ["updated_at", "2017-07-08 15:50:30.112421"], ["artist_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Through The Silence"], ["created_at", "2017-07-08 15:50:30.116377"], ["updated_at", "2017-07-08 15:50:30.116377"], ["artist_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Into The Heavens"], ["created_at", "2017-07-08 15:50:30.120169"], ["updated_at", "2017-07-08 15:50:30.120169"], ["artist_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Wind In The Trees"], ["created_at", "2017-07-08 15:50:30.128460"], ["updated_at", "2017-07-08 15:50:30.128460"], ["artist_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Stillness In The Woods"], ["created_at", "2017-07-08 15:50:30.132330"], ["updated_at", "2017-07-08 15:50:30.132330"], ["artist_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Under The Shade"], ["created_at", "2017-07-08 15:50:30.135232"], ["updated_at", "2017-07-08 15:50:30.135232"], ["artist_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Silver Cloud (Goodnight Mix)"], ["created_at", "2017-07-08 15:50:30.138235"], ["updated_at", "2017-07-08 15:50:30.138235"], ["artist_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "In Twilight (The Dream Mix)"], ["created_at", "2017-07-08 15:50:30.141089"], ["updated_at", "2017-07-08 15:50:30.141089"], ["artist_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Through The Silence (The Dawn Mix)"], ["created_at", "2017-07-08 15:50:30.145711"], ["updated_at", "2017-07-08 15:50:30.145711"], ["artist_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Indigo"], ["created_at", "2017-07-08 15:50:30.149245"], ["updated_at", "2017-07-08 15:50:30.149245"], ["artist_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Violet"], ["created_at", "2017-07-08 15:50:30.152624"], ["updated_at", "2017-07-08 15:50:30.152624"], ["artist_id", 1]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "After Violet"], ["created_at", "2017-07-08 15:50:30.161161"], ["updated_at", "2017-07-08 15:50:30.161161"], ["artist_id", 6]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Slient Night"], ["created_at", "2017-07-08 15:50:30.170724"], ["updated_at", "2017-07-08 15:50:30.170724"], ["artist_id", 2]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Moonlight Sonata"], ["created_at", "2017-07-08 15:50:30.185253"], ["updated_at", "2017-07-08 15:50:30.185253"], ["artist_id", 4]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lullaby"], ["created_at", "2017-07-08 15:50:30.193178"], ["updated_at", "2017-07-08 15:50:30.193178"], ["artist_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Starless Night"], ["created_at", "2017-07-08 15:50:30.195903"], ["updated_at", "2017-07-08 15:50:30.195903"], ["artist_id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lull"], ["created_at", "2017-07-08 15:50:30.198515"], ["updated_at", "2017-07-08 15:50:30.198515"], ["artist_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Whispers"], ["created_at", "2017-07-08 15:50:30.201239"], ["updated_at", "2017-07-08 15:50:30.201239"], ["artist_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Prelude"], ["created_at", "2017-07-08 15:50:30.204276"], ["updated_at", "2017-07-08 15:50:30.204276"], ["artist_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ghosts"], ["created_at", "2017-07-08 15:50:30.210422"], ["updated_at", "2017-07-08 15:50:30.210422"], ["artist_id", 5]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nostalgia"], ["created_at", "2017-07-08 15:50:30.215061"], ["updated_at", "2017-07-08 15:50:30.215061"], ["artist_id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Finis"], ["created_at", "2017-07-08 15:50:30.219562"], ["updated_at", "2017-07-08 15:50:30.219562"], ["artist_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Thousand Lights"], ["created_at", "2017-07-08 15:50:30.223617"], ["updated_at", "2017-07-08 15:50:30.223617"], ["artist_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ascending"], ["created_at", "2017-07-08 15:50:30.226684"], ["updated_at", "2017-07-08 15:50:30.226684"], ["artist_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "One And Only"], ["created_at", "2017-07-08 15:50:30.232139"], ["updated_at", "2017-07-08 15:50:30.232139"], ["artist_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Forever"], ["created_at", "2017-07-08 15:50:30.235791"], ["updated_at", "2017-07-08 15:50:30.235791"], ["artist_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Depths Of Love"], ["created_at", "2017-07-08 15:50:30.238435"], ["updated_at", "2017-07-08 15:50:30.238435"], ["artist_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The End And The Beginning"], ["created_at", "2017-07-08 15:50:30.241193"], ["updated_at", "2017-07-08 15:50:30.241193"], ["artist_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fathom"], ["created_at", "2017-07-08 15:50:30.244476"], ["updated_at", "2017-07-08 15:50:30.244476"], ["artist_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brilliance"], ["created_at", "2017-07-08 15:50:30.247873"], ["updated_at", "2017-07-08 15:50:30.247873"], ["artist_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 1]]
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 2]]
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 3]]
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 4]]
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 5]]
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 6]]
+Started GET "/artists/" for 127.0.0.1 at 2017-07-08 17:50:35 +0200
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (12.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (86.8ms)
+Completed 200 OK in 663ms (Views: 583.3ms | ActiveRecord: 49.5ms)
+
+
+Started GET "/artists/2" for 127.0.0.1 at 2017-07-08 17:50:43 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 2]]
+  Rendered songs/_form.html.erb (56.4ms)
+  Rendered artists/show.html.erb within layouts/application (177.1ms)
+Completed 200 OK in 307ms (Views: 210.0ms | ActiveRecord: 28.2ms)
+
+
+Started POST "/artists/2/songs" for 127.0.0.1 at 2017-07-08 17:50:50 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+Started POST "/artists/2/songs" for 127.0.0.1 at 2017-07-08 17:51:17 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:10: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:10: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/2" for 127.0.0.1 at 2017-07-08 17:52:56 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 2]]
+  Rendered songs/_form.html.erb (8.0ms)
+  Rendered artists/show.html.erb within layouts/application (340.2ms)
+Completed 500 Internal Server Error in 392ms (ActiveRecord: 23.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `new_artist_song_path' for #<#<Class:0x007fd6afb0e6f8>:0x007fd6afb0cab0>
+Did you mean?  new_artist_path):
+    18:   <div class="panel-body">
+    19:       <%= render 'songs/form' %>
+    20:   </div>
+    21: 
+    22: 
+    23: <%= link_to "Add new song", new_artist_song_path(@artist[:id]), class: "btn btn-primary" %>
+  
+app/views/artists/show.html.erb:21:in `_app_views_artists_show_html_erb__3429842460210589893_70280023668680'
+Started GET "/artists/2" for 127.0.0.1 at 2017-07-08 17:53:28 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 2]]
+  Rendered songs/_form.html.erb (3.4ms)
+  Rendered artists/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 59ms (Views: 51.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/artists/2/songs" for 127.0.0.1 at 2017-07-08 17:53:36 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:6: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:6: syntax error, unexpected ')', expecting keyword_end
+Started POST "/artists/2/songs" for 127.0.0.1 at 2017-07-08 17:54:43 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:6: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^):
+  
+app/controllers/songs_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:6: syntax error, unexpected ')', expecting keyword_end
+Started GET "/artists/2" for 127.0.0.1 at 2017-07-08 17:55:04 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (5.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (3.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 2]]
+  Rendered songs/_form.html.erb (8.8ms)
+  Rendered artists/show.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 221ms (Views: 124.4ms | ActiveRecord: 57.9ms)
+
+
+Started GET "/artists/3" for 127.0.0.1 at 2017-07-08 17:55:08 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 3]]
+  Rendered songs/_form.html.erb (3.9ms)
+  Rendered artists/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 63ms (Views: 45.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/artists/3/songs" for 127.0.0.1 at 2017-07-08 17:55:14 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+ng_params.merge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:6: syntax error, unexpected ')', expecting keyword_end
+ge(:artist params[:artist_id]))
+                              ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:9: syntax error, unexpected ':', expecting keyword_end
+           notice: "Song created"
+                  ^):
+  
+app/controllers/songs_controller.rb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/songs_controller.rb:6: syntax error, unexpected ')', expecting keyword_end
+app/controllers/songs_controller.rb:9: syntax error, unexpected ':', expecting keyword_end
+Started POST "/artists/3/songs" for 127.0.0.1 at 2017-07-08 18:00:09 +0200
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/controllers/songs_controller.rb:21: syntax error, unexpected ':', expecting keyword_end
+           notice: "Song created"
+                  ^):
+  
+app/controllers/songs_controller.rb:21: syntax error, unexpected ':', expecting keyword_end
+Started GET "/artists/3" for 127.0.0.1 at 2017-07-08 18:02:12 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 3]]
+  Rendered songs/_form.html.erb (9.7ms)
+  Rendered artists/show.html.erb within layouts/application (255.0ms)
+Completed 200 OK in 872ms (Views: 516.1ms | ActiveRecord: 176.4ms)
+
+
+Started GET "/artists/3" for 127.0.0.1 at 2017-07-08 18:04:27 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 3]]
+  Rendered songs/_form.html.erb (5.1ms)
+  Rendered artists/show.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 117ms (Views: 81.3ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/artists/3/songs" for 127.0.0.1 at 2017-07-08 18:04:35 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GTStoxaQ9keJdL4sCcBSyZFywFXVH+SYMVwzOJXPltLxrPN/ydJda5FjKP6D9S0Cr7gOZ+TjPI3AjtaAaqVPBQ==", "song"=>{"name"=>"Test", "length"=>"123", "artist_id"=>"3"}, "commit"=>"Create", "artist_id"=>"3"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `find' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:34:in `set_artist'
+Started GET "/artists/3" for 127.0.0.1 at 2017-07-08 18:05:52 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 3]]
+  Rendered songs/_form.html.erb (23.3ms)
+  Rendered artists/show.html.erb within layouts/application (66.1ms)
+Completed 200 OK in 137ms (Views: 97.0ms | ActiveRecord: 16.9ms)
+
+
+Started POST "/artists/3/songs" for 127.0.0.1 at 2017-07-08 18:06:01 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xnyvqqXqzmJfPSdPUJdowluKChdmjVZplpIHW6bW21Qu5PF2eqhlTkcqsZ3aohcJZUDEJVdxjnxnQOLjWbwCgw==", "song"=>{"name"=>"test", "length"=>"twe", "artist_id"=>"3"}, "commit"=>"Create", "artist_id"=>"3"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `songs' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:18:in `create'
+Started GET "/artists/3" for 127.0.0.1 at 2017-07-08 18:06:23 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (5.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 3]]
+  Rendered songs/_form.html.erb (15.1ms)
+  Rendered artists/show.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 121ms (Views: 95.4ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/artists/3/songs" for 127.0.0.1 at 2017-07-08 18:06:32 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j1aqXv3mOWigccvYNAGWAB6Xvl7l7f7zPTegCyCwsKVnzvSCIqSSRLhmXQq+NOnLIF1wbNQRJubM5UWz39ppcg==", "song"=>{"name"=>"test", "length"=>"1234", "artist_id"=>"3"}, "commit"=>"Create", "artist_id"=>"3"}
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `songs' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:18:in `create'
+Started POST "/artists/3/songs" for 127.0.0.1 at 2017-07-08 18:08:17 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j1aqXv3mOWigccvYNAGWAB6Xvl7l7f7zPTegCyCwsKVnzvSCIqSSRLhmXQq+NOnLIF1wbNQRJubM5UWz39ppcg==", "song"=>{"name"=>"test", "length"=>"1234", "artist_id"=>"3"}, "commit"=>"Create", "artist_id"=>"3"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: :artist_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "length", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["length", "00:00:00"], ["created_at", "2017-07-08 16:08:17.137649"], ["updated_at", "2017-07-08 16:08:17.137649"], ["artist_id", 3]]
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists/3
+Completed 302 Found in 111ms (ActiveRecord: 56.3ms)
+
+
+Started GET "/artists/3" for 127.0.0.1 at 2017-07-08 18:08:17 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 3]]
+  Rendered songs/_form.html.erb (10.0ms)
+  Rendered artists/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 178ms (Views: 172.8ms | ActiveRecord: 0.8ms)
+
+

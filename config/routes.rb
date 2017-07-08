@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
 
-    resources :artists
-    resources :songs, except: [:destroy]
+  resources :artists do
+    resources :songs, only: [:create, :destroy]
+  end
 
 end

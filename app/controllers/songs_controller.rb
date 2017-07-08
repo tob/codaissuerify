@@ -1,35 +1,48 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: [:show, :edit, :update]
+  before_action :set_artist
 
-    def index
-      @songs = current_artist.songs
-    end
+      # # start test
+      # def create
+      #   @song = @artist.songs.build(song_params.merge(:artist params[:artist_id]))
+      #
+      #   if @song.save
+      #      notice: "Song created"
+      #   else
+      #     render :new
+      #   end
+      # end
+      # #end test
 
-    def new
-      @song = current_artist.songs.build
-    end
+      # start test
+      def create
+        @song = @artist.songs.build(song_params)
 
-    def create
-      @song = current_artist.songs.build(song_params)
-
-      if @song.save
-        redirect_to @song, notice: "Song created"
-      else
-        render :new
+        if @song.save
+          redirect_to artist_path(@artist),  notice: "Song created"
+        else
+          render :new
+        end
       end
+      #end test
+
+    def destroy
+      current_artist.songs.destroy(@song)
     end
 
     private
-
-    def set_song
-      @song = song.find(params[:id])
+    def set_artist
+      @artist = Artist.find(params[:artist_id])
     end
+
+    # def set_song
+    #    @song = song.find(params[:id])
+    #  end
 
     def song_params
       params
         .require(:song)
         .permit(
-          :name, :length, :artist
+          :name, :length
         )
     end
   end
