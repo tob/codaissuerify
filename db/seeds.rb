@@ -3,12 +3,12 @@ Artist.destroy_all
 
 #artists -- Added the artists to an array to be able to use them randomly while creating the songs with artists.sample.
 artists = []
-artists << artist1 = Artist.create!( { name: "Iggy Pop"} )
-artists << artist2 = Artist.create!( { name: "The Beatles"} )
-artists << artist3 = Artist.create!( { name: "The Rolling Stones"} )
-artists << artist4 = Artist.create!( { name: "Buena vista social club"})
-artists << artist5 = Artist.create!( { name: "Bret Domino trio"} )
-artists << artist6 = Artist.create!( { name: "Led Zeppelin"})
+artists << artist1 = Artist.create!( { name: "Iggy Pop", image_url:"http://res.cloudinary.com/djxbktwxl/image/upload/v1499514719/6bec6f659fef26410d3df95dadff156a--iggy-pop-iggy-iggy_xag3bd.jpg"} )
+artists << artist2 = Artist.create!( { name: "The Beatles", image_url:"http://res.cloudinary.com/djxbktwxl/image/upload/v1499514762/TheBeatles_bvb4na.jpg"} )
+artists << artist3 = Artist.create!( { name: "The Rolling Stones", image_url:"http://res.cloudinary.com/djxbktwxl/image/upload/v1499514839/rs-134713-20131007-stones2-x306-1381179560-1381341128_on4ixz.jpg"} )
+artists << artist4 = Artist.create!( { name: "Buena vista social club", image_url:"http://res.cloudinary.com/djxbktwxl/image/upload/v1499514873/Current_28792id_001_large_e3lclg.jpg"})
+artists << artist5 = Artist.create!( { name: "Bret Domino trio", image_url:"http://res.cloudinary.com/djxbktwxl/image/upload/v1499514934/300x300_pfiy7k.jpg"} )
+artists << artist6 = Artist.create!( { name: "Led Zeppelin", image_url:"http://res.cloudinary.com/djxbktwxl/image/upload/v1499514795/ledzeppelin1973_gruen_webuseonly_qisl6i.jpg"})
 
 artists_count = Artist.all.length
 songs_count = Song.all.length
