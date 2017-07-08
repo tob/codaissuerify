@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
-  before_action :set_artist
 
     def create
+      set_artist
       @song = @artist.songs.build(song_params)
       if @song.save
         redirect_to artist_path(@artist),  notice: "Song created"
@@ -11,6 +11,7 @@ class SongsController < ApplicationController
     end
 
     def destroy
+      set_artist
       set_song
       if @song.destroy
         redirect_to artist_path(@artist), notice: "Song deleted"

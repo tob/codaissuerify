@@ -1,12 +1,14 @@
 <div class="row">
   <% @artist.each do |artist| %>
-    <div class="panel-body">
-      <div class="col-md-3">
-          <h4><%= artist.name %></h4>
-          <%= image_tag(artist.image_url) =%>
-          <%= link_to "View", artist, class: "btn btn-default" %>
-          <%= link_to "Delete", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
-      </div>
+  <div class="panel-body">
+    <div class="col-md-3">
+      <h4><%= artist.name %></h4>
+      <%= image_tag(artist.image_url) =%>
+
+      <%= link_to "View", artist, class: "btn btn-default" %>
+
+      <%= link_to "Delete", artist_path(artist), class: "btn btn-default", method: :delete, data: { confirm: "There is no going back" } =%>
     </div>
+  </div>
   <% end %>
 </div>

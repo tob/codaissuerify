@@ -30038,3 +30038,665 @@ Processing by ArtistsController#show as HTML
 Completed 200 OK in 150ms (Views: 118.4ms | ActiveRecord: 3.8ms)
 
 
+Started GET "/artists/10" for 127.0.0.1 at 2017-07-09 00:37:52 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 10]]
+  Rendered songs/_list_songs.html.erb (6.2ms)
+  Rendered songs/_form.html.erb (7.2ms)
+  Rendered artists/show.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 140ms (Views: 100.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/artists/10/songs/61" for 127.0.0.1 at 2017-07-09 00:37:57 +0200
+Processing by SongsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OaFe4/+ciCsTyohMDc5rY/vERyjU8+Vy5rqroa1l7y/ROQA/IN4jBwvdHp6H+xSoxQ6JGuUPPWcXaE4ZUg82+A==", "artist_id"=>"10", "id"=>"61"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mSong Load (1.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 61], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 61]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists/10
+Completed 302 Found in 10ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/artists/10" for 127.0.0.1 at 2017-07-09 00:37:57 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 10]]
+  Rendered songs/_list_songs.html.erb (3.4ms)
+  Rendered songs/_form.html.erb (6.3ms)
+  Rendered artists/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 73ms (Views: 66.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:40:51 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (1.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/_artist_profile.html.erb (18.2ms)
+  Rendered artists/index.html.erb within layouts/application (27.7ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<Artist::ActiveRecord_Relation:0x007f8c2dc97898>):
+    1: <div class="col-md-3">
+    2:   <h4><%= @artist.name %></h4>
+    3:   <%= image_tag(@artist.image_url) =%>
+    4:   <%= @artist.id =%>
+    5:   <%= link_to "Delete", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+    6: </div>
+  
+app/views/artists/_artist_profile.html.erb:3:in `_app_views_artists__artist_profile_html_erb___3338028984160370612_70120016344300'
+app/views/artists/index.html.erb:5:in `block in _app_views_artists_index_html_erb___3800944019498618403_70120025360780'
+app/views/artists/index.html.erb:2:in `_app_views_artists_index_html_erb___3800944019498618403_70120025360780'
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:41:48 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/_artist_profile.html.erb (372.8ms)
+  Rendered artists/index.html.erb within layouts/application (378.2ms)
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artist' for #<#<Class:0x007f8c33011cd0>:0x007f8c2ce043f8>
+Did you mean?  @artist):
+    1: <div class="col-md-3">
+    2:   <h4><%= artist.name %></h4>
+    3:   <%= image_tag(artist.image_url) =%>
+    4:   <%= artist.id =%>
+    5:   <%= link_to "Delete", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+  
+app/views/artists/_artist_profile.html.erb:2:in `_app_views_artists__artist_profile_html_erb___3338028984160370612_70120025866360'
+app/views/artists/index.html.erb:5:in `block in _app_views_artists_index_html_erb___3800944019498618403_70120012525020'
+app/views/artists/index.html.erb:2:in `_app_views_artists_index_html_erb___3800944019498618403_70120012525020'
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:44:06 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/artists/%23%3CArtist::ActiveRecord_Relation:0x007f8c2de8e138%3E" for 127.0.0.1 at 2017-07-09 00:44:13 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/3ScXwDQwyYeHmJF7uu+CxZRQlgCu6auqer/wf5YHXAX7MKD35JoCgYJ9Jdk3sHAKJuMajNHfrtYOBp5ATLEpw==", "id"=>"#<Artist::ActiveRecord_Relation:0x007f8c2de8e138>"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=#<Artist::ActiveRecord_Relation:0x007f8c2de8e138>):
+  
+app/controllers/artists_controller.rb:18:in `artist'
+app/controllers/artists_controller.rb:9:in `destroy'
+Started DELETE "/artists/%23%3CArtist::ActiveRecord_Relation:0x007f8c2de8e138%3E" for 127.0.0.1 at 2017-07-09 00:47:36 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/3ScXwDQwyYeHmJF7uu+CxZRQlgCu6auqer/wf5YHXAX7MKD35JoCgYJ9Jdk3sHAKJuMajNHfrtYOBp5ATLEpw==", "id"=>"#<Artist::ActiveRecord_Relation:0x007f8c2de8e138>"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 17ms (ActiveRecord: 6.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=):
+  
+app/controllers/artists_controller.rb:18:in `artist'
+app/controllers/artists_controller.rb:9:in `destroy'
+Started GET "/artists/" for 127.0.0.1 at 2017-07-09 00:47:52 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 46ms (Views: 42.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/artists/" for 127.0.0.1 at 2017-07-09 00:48:26 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 50ms (Views: 39.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/artists/9" for 127.0.0.1 at 2017-07-09 00:48:33 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (2.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 9]]
+  Rendered songs/_list_songs.html.erb (67.8ms)
+  Rendered songs/_form.html.erb (14.5ms)
+  Rendered artists/show.html.erb within layouts/application (93.7ms)
+Completed 200 OK in 150ms (Views: 113.8ms | ActiveRecord: 29.6ms)
+
+
+Started DELETE "/artists/9" for 127.0.0.1 at 2017-07-09 00:48:40 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sFrs4kboN+zCSHBLJEPuV2WgOjy0M+YNCd9UMsaETCtYwrI+maqcwNpf5pmudpGcW2r0DoXPPhj4DbGKOe6V/A==", "id"=>"9"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 9]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 48]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 50]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 51]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 66]]
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 72]]
+  [1m[35mSQL (4.1ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 75]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 76]]
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 80]]
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 9]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 30ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:48:40 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 108ms (Views: 77.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:49:19 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:50:34 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"artists"}, missing required keys: [:id]):
+    4:       <div class="col-md-3">
+    5:           <h4><%= artist.name %></h4>
+    6:           <%= image_tag(artist.image_url) =%>
+    7:           <%= link_to "View", artist, class: "btn btn-default" %>
+    8:           <%= link_to "Delete", artist_path, class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+    9:       </div>
+   10:     </div>
+  
+app/views/artists/index.html.erb:7:in `block in _app_views_artists_index_html_erb___3800944019498618403_70120060596620'
+app/views/artists/index.html.erb:2:in `_app_views_artists_index_html_erb___3800944019498618403_70120060596620'
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:51:11 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 71ms (Views: 63.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists/10" for 127.0.0.1 at 2017-07-09 00:51:15 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 10]]
+  Rendered songs/_list_songs.html.erb (7.3ms)
+  Rendered songs/_form.html.erb (5.0ms)
+  Rendered artists/show.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 146ms (Views: 138.3ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/artists/10" for 127.0.0.1 at 2017-07-09 00:51:21 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YljGMyjawXIVb/l1gimqVvKqjK71hVLHMfIOy1d5SbuKwJjv95hqXg14b6cIHNWdzGBCnMR5itLAIOtzqBOQbA==", "id"=>"10"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Load (1.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 10]]
+  [1m[35mSQL (11.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 68]]
+  [1m[35mSQL (25.0ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 54ms (ActiveRecord: 39.3ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:51:21 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 66ms (Views: 60.7ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Load (3.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 11]]
+  [1m[35mSQL (3.2ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 57]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 58]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 59]]
+  [1m[35mSQL (5.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 77]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 78]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 79]]
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Iggy Pop"], ["created_at", "2017-07-08 22:51:37.790354"], ["updated_at", "2017-07-08 22:51:37.790354"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514719/6bec6f659fef26410d3df95dadff156a--iggy-pop-iggy-iggy_xag3bd.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Beatles"], ["created_at", "2017-07-08 22:51:37.796119"], ["updated_at", "2017-07-08 22:51:37.796119"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514762/TheBeatles_bvb4na.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Rolling Stones"], ["created_at", "2017-07-08 22:51:37.804109"], ["updated_at", "2017-07-08 22:51:37.804109"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514839/rs-134713-20131007-stones2-x306-1381179560-1381341128_on4ixz.jpg"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Buena vista social club"], ["created_at", "2017-07-08 22:51:37.813342"], ["updated_at", "2017-07-08 22:51:37.813342"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514873/Current_28792id_001_large_e3lclg.jpg"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bret Domino trio"], ["created_at", "2017-07-08 22:51:37.829473"], ["updated_at", "2017-07-08 22:51:37.829473"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514934/300x300_pfiy7k.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Led Zeppelin"], ["created_at", "2017-07-08 22:51:37.834081"], ["updated_at", "2017-07-08 22:51:37.834081"], ["image_url", "http://res.cloudinary.com/djxbktwxl/image/upload/v1499514795/ledzeppelin1973_gruen_webuseonly_qisl6i.jpg"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mSong Load (9.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "In Twilight"], ["created_at", "2017-07-08 22:51:37.894672"], ["updated_at", "2017-07-08 22:51:37.894672"], ["artist_id", 18]]
+  [1m[35m (85.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Shoreline"], ["created_at", "2017-07-08 22:51:38.000058"], ["updated_at", "2017-07-08 22:51:38.000058"], ["artist_id", 15]]
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Tide"], ["created_at", "2017-07-08 22:51:38.014875"], ["updated_at", "2017-07-08 22:51:38.014875"], ["artist_id", 13]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Dive"], ["created_at", "2017-07-08 22:51:38.025207"], ["updated_at", "2017-07-08 22:51:38.025207"], ["artist_id", 18]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Swell"], ["created_at", "2017-07-08 22:51:38.030880"], ["updated_at", "2017-07-08 22:51:38.030880"], ["artist_id", 18]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Silver Cloud"], ["created_at", "2017-07-08 22:51:38.035365"], ["updated_at", "2017-07-08 22:51:38.035365"], ["artist_id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sunshine"], ["created_at", "2017-07-08 22:51:38.041053"], ["updated_at", "2017-07-08 22:51:38.041053"], ["artist_id", 14]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "In Bloom"], ["created_at", "2017-07-08 22:51:38.046832"], ["updated_at", "2017-07-08 22:51:38.046832"], ["artist_id", 13]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Above The Auroras"], ["created_at", "2017-07-08 22:51:38.053811"], ["updated_at", "2017-07-08 22:51:38.053811"], ["artist_id", 16]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Through The Silence"], ["created_at", "2017-07-08 22:51:38.059444"], ["updated_at", "2017-07-08 22:51:38.059444"], ["artist_id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Into The Heavens"], ["created_at", "2017-07-08 22:51:38.064911"], ["updated_at", "2017-07-08 22:51:38.064911"], ["artist_id", 17]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Wind In The Trees"], ["created_at", "2017-07-08 22:51:38.069627"], ["updated_at", "2017-07-08 22:51:38.069627"], ["artist_id", 14]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Stillness In The Woods"], ["created_at", "2017-07-08 22:51:38.074237"], ["updated_at", "2017-07-08 22:51:38.074237"], ["artist_id", 14]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Under The Shade"], ["created_at", "2017-07-08 22:51:38.081193"], ["updated_at", "2017-07-08 22:51:38.081193"], ["artist_id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Silver Cloud (Goodnight Mix)"], ["created_at", "2017-07-08 22:51:38.093018"], ["updated_at", "2017-07-08 22:51:38.093018"], ["artist_id", 17]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "In Twilight (The Dream Mix)"], ["created_at", "2017-07-08 22:51:38.099475"], ["updated_at", "2017-07-08 22:51:38.099475"], ["artist_id", 18]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Through The Silence (The Dawn Mix)"], ["created_at", "2017-07-08 22:51:38.115560"], ["updated_at", "2017-07-08 22:51:38.115560"], ["artist_id", 18]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Indigo"], ["created_at", "2017-07-08 22:51:38.130373"], ["updated_at", "2017-07-08 22:51:38.130373"], ["artist_id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Violet"], ["created_at", "2017-07-08 22:51:38.139281"], ["updated_at", "2017-07-08 22:51:38.139281"], ["artist_id", 13]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "After Violet"], ["created_at", "2017-07-08 22:51:38.143701"], ["updated_at", "2017-07-08 22:51:38.143701"], ["artist_id", 18]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Slient Night"], ["created_at", "2017-07-08 22:51:38.150687"], ["updated_at", "2017-07-08 22:51:38.150687"], ["artist_id", 16]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Moonlight Sonata"], ["created_at", "2017-07-08 22:51:38.164396"], ["updated_at", "2017-07-08 22:51:38.164396"], ["artist_id", 14]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (54.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (18.2ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lullaby"], ["created_at", "2017-07-08 22:51:38.227192"], ["updated_at", "2017-07-08 22:51:38.227192"], ["artist_id", 13]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Starless Night"], ["created_at", "2017-07-08 22:51:38.250380"], ["updated_at", "2017-07-08 22:51:38.250380"], ["artist_id", 16]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lull"], ["created_at", "2017-07-08 22:51:38.255804"], ["updated_at", "2017-07-08 22:51:38.255804"], ["artist_id", 18]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Whispers"], ["created_at", "2017-07-08 22:51:38.260468"], ["updated_at", "2017-07-08 22:51:38.260468"], ["artist_id", 14]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Prelude"], ["created_at", "2017-07-08 22:51:38.271321"], ["updated_at", "2017-07-08 22:51:38.271321"], ["artist_id", 14]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ghosts"], ["created_at", "2017-07-08 22:51:38.286534"], ["updated_at", "2017-07-08 22:51:38.286534"], ["artist_id", 15]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Nostalgia"], ["created_at", "2017-07-08 22:51:38.296856"], ["updated_at", "2017-07-08 22:51:38.296856"], ["artist_id", 16]]
+  [1m[35m (22.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Finis"], ["created_at", "2017-07-08 22:51:38.324933"], ["updated_at", "2017-07-08 22:51:38.324933"], ["artist_id", 13]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "A Thousand Lights"], ["created_at", "2017-07-08 22:51:38.329392"], ["updated_at", "2017-07-08 22:51:38.329392"], ["artist_id", 13]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (8.0ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ascending"], ["created_at", "2017-07-08 22:51:38.334132"], ["updated_at", "2017-07-08 22:51:38.334132"], ["artist_id", 13]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "One And Only"], ["created_at", "2017-07-08 22:51:38.348039"], ["updated_at", "2017-07-08 22:51:38.348039"], ["artist_id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Forever"], ["created_at", "2017-07-08 22:51:38.361324"], ["updated_at", "2017-07-08 22:51:38.361324"], ["artist_id", 15]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Depths Of Love"], ["created_at", "2017-07-08 22:51:38.366390"], ["updated_at", "2017-07-08 22:51:38.366390"], ["artist_id", 14]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The End And The Beginning"], ["created_at", "2017-07-08 22:51:38.379554"], ["updated_at", "2017-07-08 22:51:38.379554"], ["artist_id", 13]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fathom"], ["created_at", "2017-07-08 22:51:38.391779"], ["updated_at", "2017-07-08 22:51:38.391779"], ["artist_id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Brilliance"], ["created_at", "2017-07-08 22:51:38.396973"], ["updated_at", "2017-07-08 22:51:38.396973"], ["artist_id", 15]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mSong Load (4.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 13]]
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 14]]
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 16]]
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 17]]
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 18]]
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:51:42 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:52:14 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists/13" for 127.0.0.1 at 2017-07-09 00:52:20 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (4.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 13]]
+  Rendered songs/_list_songs.html.erb (12.7ms)
+  Rendered songs/_form.html.erb (4.0ms)
+  Rendered artists/show.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 99ms (Views: 79.6ms | ActiveRecord: 5.0ms)
+
+
+Started DELETE "/artists/13" for 127.0.0.1 at 2017-07-09 00:52:28 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eQ0CJgPfYCsKXTMAuTtV3HeEpDpH1ne+mJr78GrTfJORlVz63J3LBxJKpdIzDioXSU5qCHYqr6tpSB5IlbmlRA==", "id"=>"13"}
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Load (29.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 13]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 85]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 90]]
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 101]]
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 105]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 112]]
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 113]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 114]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 118]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 13]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 67ms (ActiveRecord: 40.4ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:52:28 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 43ms (Views: 39.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:53:27 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  Rendered artists/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/views/artists/index.html.erb:9: syntax error, unexpected '<', expecting ')'
+        </div>
+         ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/views/artists/index.html.erb:10: unknown regexp options - dv
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/views/artists/index.html.erb:11: syntax error, unexpected '<'
+        <% end );@output_buffer.safe_ap
+         ^
+/Users/Tob/Desktop/codaisseur/week2/codaissuerify/app/views/artists/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/artists/index.html.erb:9: syntax error, unexpected '<', expecting ')'
+app/views/artists/index.html.erb:10: unknown regexp options - dv
+app/views/artists/index.html.erb:11: syntax error, unexpected '<'
+app/views/artists/index.html.erb:17: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:53:50 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 50ms (Views: 44.7ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/artists/14" for 127.0.0.1 at 2017-07-09 00:53:56 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PDYBb9oAYgH4z2AgFN4/4RBl9UgL0ekNmWUY/EdteCfUrl+zBULJLeDY9vKe60AqLq87ejotMRhot/1EuAeh8A==", "id"=>"14"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Load (2.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 14]]
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 89]]
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 94]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 95]]
+  [1m[35mSQL (2.0ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 104]]
+  [1m[35mSQL (2.1ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 108]]
+  [1m[35mSQL (3.8ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 109]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 117]]
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 14]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 40ms (ActiveRecord: 22.0ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:53:56 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 46ms (Views: 40.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/artists/16" for 127.0.0.1 at 2017-07-09 00:54:01 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bfxfEHglLEFB8AMBhIv6iyz4DH4YizhPiQNCsJ2rNCuFZAHMp2eHbVnnldMOvoVAEjLCTCl34Fp40acIYsHt/A==", "id"=>"16"}
+  [1m[36mArtist Load (8.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Load (2.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 16]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 88]]
+  [1m[35mSQL (39.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 91]]
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 92]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 100]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 103]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 106]]
+  [1m[35mSQL (16.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 111]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 115]]
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 119]]
+  [1m[35mSQL (2.9ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 16]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 120ms (ActiveRecord: 83.8ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:54:01 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 57ms (Views: 51.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists/17" for 127.0.0.1 at 2017-07-09 00:54:06 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mArtist Load (1.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (147.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 17]]
+  Rendered songs/_list_songs.html.erb (152.9ms)
+  Rendered songs/_form.html.erb (6.0ms)
+  Rendered artists/show.html.erb within layouts/application (187.0ms)
+Completed 200 OK in 380ms (Views: 224.3ms | ActiveRecord: 149.0ms)
+
+
+Started DELETE "/artists/17" for 127.0.0.1 at 2017-07-09 00:54:10 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"F1wvZcQQ10/GoDvM+gEV6KII8if2+5LP4TKaURzEwwX/xHG5G1J8Y963rR5wNGojnMI8FccHStoQ4H/p464a0g==", "id"=>"17"}
+  [1m[36mArtist Load (10.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Load (10.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 17]]
+  [1m[35mSQL (3.9ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 93]]
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 97]]
+  [1m[35mSQL (4.6ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 67ms (ActiveRecord: 34.5ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:54:10 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (9.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 113ms (Views: 91.7ms | ActiveRecord: 9.2ms)
+
+
+Started DELETE "/artists/15" for 127.0.0.1 at 2017-07-09 00:54:16 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yIv3hc5ZovplLjB3XVzRvG2sNxm39orp1Rdz0l/hUaggE6lZERsJ1n05pqXXaa53U2b5K4YKUvwkxZZqoIuIfw==", "id"=>"15"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 15]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 84]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 96]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 110]]
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 116]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 120]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 15]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 22ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 00:54:16 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists/18" for 127.0.0.1 at 2017-07-09 00:54:20 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 18]]
+  Rendered songs/_list_songs.html.erb (6.8ms)
+  Rendered songs/_form.html.erb (9.9ms)
+  Rendered artists/show.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 144ms (Views: 90.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/artists/18" for 127.0.0.1 at 2017-07-09 00:55:54 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (2.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 18]]
+  Rendered songs/_list_songs.html.erb (68.4ms)
+  Rendered songs/_form.html.erb (7.0ms)
+  Rendered artists/show.html.erb within layouts/application (86.9ms)
+Completed 200 OK in 415ms (Views: 341.7ms | ActiveRecord: 15.6ms)
+
+
+Started DELETE "/artists/18/songs/83" for 127.0.0.1 at 2017-07-09 00:56:01 +0200
+Processing by SongsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fYppA+l0K2YsDa730hTJ1zf/fsE/3/H7kVHq6TebBimVEjffNjaASjQaOCVYIbYcCTWw8w4jKe5ggw9RyPHf/g==", "artist_id"=>"18", "id"=>"83"}
+  [1m[36mArtist Load (1.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 83], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 83]]
+  [1m[35m (27.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists/18
+Completed 302 Found in 43ms (ActiveRecord: 31.6ms)
+
+
+Started GET "/artists/18" for 127.0.0.1 at 2017-07-09 00:56:01 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 18]]
+  Rendered songs/_list_songs.html.erb (9.9ms)
+  Rendered songs/_form.html.erb (34.4ms)
+  Rendered artists/show.html.erb within layouts/application (63.6ms)
+Completed 200 OK in 274ms (Views: 265.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/artists/18/songs" for 127.0.0.1 at 2017-07-09 00:56:10 +0200
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HjvKbP3wI44ywtXu5dgPeOISFPxmus/uMu+XEj2xYTT2o5SwIrKIoirVQzxv7XCz3NjazldGF/vDPXKqwtu44w==", "song"=>{"name"=>"test", "length"=>"test", "artist_id"=>"18"}, "commit"=>"Create", "artist_id"=>"18"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Unpermitted parameter: :artist_id
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.4ms)[0m  [1m[32mINSERT INTO "songs" ("name", "length", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test"], ["length", "00:00:00"], ["created_at", "2017-07-08 22:56:10.137876"], ["updated_at", "2017-07-08 22:56:10.137876"], ["artist_id", 18]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists/18
+Completed 302 Found in 26ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/artists/18" for 127.0.0.1 at 2017-07-09 00:56:10 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 18]]
+  Rendered songs/_list_songs.html.erb (7.2ms)
+  Rendered songs/_form.html.erb (6.1ms)
+  Rendered artists/show.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 131ms (Views: 124.1ms | ActiveRecord: 0.7ms)
+
+
