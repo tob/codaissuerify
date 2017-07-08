@@ -1,4 +1,3 @@
-Song.destroy_all
 Artist.destroy_all
 
 #artists -- Added the artists to an array to be able to use them randomly while creating the songs with artists.sample.
