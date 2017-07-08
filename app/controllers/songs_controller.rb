@@ -1,42 +1,32 @@
 class SongsController < ApplicationController
   before_action :set_artist
 
-      # # start test
-      # def create
-      #   @song = @artist.songs.build(song_params.merge(:artist params[:artist_id]))
-      #
-      #   if @song.save
-      #      notice: "Song created"
-      #   else
-      #     render :new
-      #   end
-      # end
-      # #end test
-
-      # start test
-      def create
-        @song = @artist.songs.build(song_params)
-
-        if @song.save
-          redirect_to artist_path(@artist),  notice: "Song created"
-        else
-          render :new
-        end
+    def create
+      @song = @artist.songs.build(song_params)
+      if @song.save
+        redirect_to artist_path(@artist),  notice: "Song created"
+      else
+        render :new
       end
-      #end test
+    end
 
     def destroy
-      current_artist.songs.destroy(@song)
+      set_song
+      if @song.destroy
+        redirect_to artist_path(@artist), notice: "Song deleted"
+      else
+        redirect_to artist_path(@artist), notice: "Something went wrong"
+      end
     end
 
     private
+    def set_song
+        @song = Song.find(params[:id])
+    end
+
     def set_artist
       @artist = Artist.find(params[:artist_id])
     end
-
-    # def set_song
-    #    @song = song.find(params[:id])
-    #  end
 
     def song_params
       params

@@ -5,7 +5,7 @@
           <h4><%= artist.name %></h4>
           <%= image_tag(artist.image_url) =%>
           <%= link_to "View", artist, class: "btn btn-default" %>
-          <%= link_to "Update", edit_artist_path(artist), class: "btn btn-default" %>
+          <%= link_to "Delete", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
       </div>
     </div>
   <% end %>

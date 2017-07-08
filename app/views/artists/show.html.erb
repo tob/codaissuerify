@@ -2,19 +2,23 @@
   <div class="col-md-3">
     <h4><%= @artist.name %></h4>
     <%= image_tag(@artist.image_url) =%>
-        <%= @artist.id =%>
+    <%= @artist.id =%>
+    <%= link_to "Delete", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
 </div>
 <div class="row">
   <% @artist.songs.each do |song| %>
-    <div class="panel-body">
-      <div class="col-md-3">
-          <h4><%= song.name %></h4>
-      </div>
+  <div class="panel-body">
+    <div class="col-md-3">
+      <h4><%= song.name =%></h4>
     </div>
+    <div class="col-md-3">
+        <%= link_to "Delete", artist_song_path(@artist, song.id), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+  </div>
   <% end %>
 </div>
 
-  <div class="panel-body">
-      <%= render 'songs/form' %>
-  </div>
+<div class="panel-body">
+  <%= render 'songs/form' %>
+</div>
