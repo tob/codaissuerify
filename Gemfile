@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -63,5 +64,7 @@ gem 'factory_girl_rails', '4.7.0'
 gem 'faker', '1.6.6'
 
 gem 'therubyracer'
-gem 'jquery-rails'  
+gem 'jquery-rails'
 gem 'less-rails-bootstrap'
+
+gem 'rails_12factor', group: :production
