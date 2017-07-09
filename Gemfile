@@ -61,5 +61,6 @@ end
 
 gem 'factory_girl_rails', '4.7.0'
 gem 'faker', '1.6.6'
-gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'jquery-rails'
+gem 'popper_js', '~> 1.9.9'

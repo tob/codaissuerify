@@ -1,10 +1,10 @@
-<% @artist.songs.each do |song| %>
-<div class="panel-body">
-  <div class="col-md-3">
-    <h4><%= song.name =%></h4>
-  </div>
-  <div class="col-md-3">
-      <%= link_to "Delete", artist_song_path(@artist, song.id), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
-  </div>
-</div>
-<% end %>
+<ul class="list-group">
+  <% @artist.songs.each do |song| %>
+  <li class="list-group-item"><%= song.name =%>
+      <span class="badge">
+
+
+        <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>".html_safe, artist_song_path(@artist, song.id), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %></span>
+    </li>
+  <% end %>
+</ul>

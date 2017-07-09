@@ -1,13 +1,14 @@
 <div class="row">
   <% @artist.each do |artist| %>
-  <div class="panel-body">
-    <div class="col-md-3">
-      <h4><%= artist.name %></h4>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
       <%= image_tag(artist.image_url) =%>
-
-      <%= link_to "View", artist, class: "btn btn-default" %>
-
-      <%= link_to "Delete", artist_path(artist), class: "btn btn-default", method: :delete, data: { confirm: "There is no going back" } =%>
+      <div class="caption">
+        <h3><%= artist.name %></h3>
+        <p>...</p>
+        <p><%= link_to "View", artist, class: "btn btn-primary", role:"button" %> <a href="#" class="btn btn-default" role="button">Button</a>
+        <%= link_to "Delete", artist_path(artist), class: "btn btn-default", method: :delete, data: { confirm: "There is no going back" } =%></p>
+      </div>
     </div>
   </div>
   <% end %>
