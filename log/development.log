@@ -31894,3 +31894,105 @@ Completed 200 OK in 68ms (Views: 61.3ms | ActiveRecord: 0.9ms)
   [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 12]]
   [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 13]]
   [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 14]]
+Started GET "/artists/" for 127.0.0.1 at 2017-07-09 12:08:22 +0200
+  [1m[35m (10.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 2659ms (Views: 2635.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/artists/10" for 127.0.0.1 at 2017-07-09 12:08:29 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 10]]
+  Rendered songs/_list_songs.html.erb (47.9ms)
+  Rendered songs/_form.html.erb (504.7ms)
+  Rendered artists/show.html.erb within layouts/application (561.9ms)
+Completed 200 OK in 596ms (Views: 579.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/artists/10" for 127.0.0.1 at 2017-07-09 12:08:33 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 10]]
+  Rendered songs/_list_songs.html.erb (3.4ms)
+  Rendered songs/_form.html.erb (2.4ms)
+  Rendered artists/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 40ms (Views: 35.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/artists/10" for 127.0.0.1 at 2017-07-09 12:08:39 +0200
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+rMBUDPVe5b0EvfPMXHPhx2YylxbWZ6ll/Ea2g7PmFISK1+M7JfQuuwFYR27RLBMI1IEbmqlRrBmI/9i8aVBhQ==", "id"=>"10"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSong Load (0.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 10]]
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 83]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 87]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 88]]
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 100]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 105]]
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 10]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 22ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 12:08:39 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-09 12:09:35 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 4578ms (Views: 4575.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists/11" for 127.0.0.1 at 2017-07-09 12:09:44 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (8.4ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 11]]
+  Rendered songs/_list_songs.html.erb (13.5ms)
+  Rendered songs/_form.html.erb (5.4ms)
+  Rendered artists/show.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 79ms (Views: 65.9ms | ActiveRecord: 8.8ms)
+
+
+Started DELETE "/artists/11/songs/85" for 127.0.0.1 at 2017-07-09 12:09:53 +0200
+Processing by SongsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3GRqIzcFq/pcPmonw0UutUPGXFROI39RbGnZqaehF3U0/DT/6EcA1kQp/PVJcFF+fQySZn/fp0SduzwRWMvOog==", "artist_id"=>"11", "id"=>"85"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = $1 LIMIT $2[0m  [["id", 85], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 85]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists/11
+Completed 302 Found in 10ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/artists/11" for 127.0.0.1 at 2017-07-09 12:09:53 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 11]]
+  Rendered songs/_list_songs.html.erb (3.2ms)
+  Rendered songs/_form.html.erb (2.8ms)
+  Rendered artists/show.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 69ms (Views: 63.1ms | ActiveRecord: 0.7ms)
+
+

@@ -61,3 +61,5 @@ end
 
 gem 'factory_girl_rails', '4.7.0'
 gem 'faker', '1.6.6'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'jquery-rails'
