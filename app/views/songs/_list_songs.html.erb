@@ -2,9 +2,7 @@
   <% @artist.songs.each do |song| %>
   <li class="list-group-item"><%= song.name =%>
       <span class="badge">
-
-
-        <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true'></span>".html_safe, artist_song_path(@artist, song.id), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %></span>
+        <%= link_to "<span class='glyphicon glyphicon-trash danger' aria-hidden='true'></span>".html_safe, artist_song_path(@artist, song.id), class: "", method: :delete, data: { confirm: "Are you sure?" } %></span>
     </li>
   <% end %>
 </ul>

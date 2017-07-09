@@ -1,15 +1,29 @@
-<div class="row">
-  <div class="col-md-3">
-    <h4><%= @artist.name %></h4>
-    <%= image_tag(@artist.image_url) =%>
-    <%= @artist.id =%>
-    <%= link_to "Delete", artist_path(@artist), class: "btn btn-default", method: :delete, data: { confirm: "Are you sure?" } %>
-  </div>
-</div>
-<div class="row">
-  <%= render 'songs/list_songs' %>
-</div>
+<div class="container">
+  <div class="row">
 
-<div class="panel-body">
-  <%= render 'songs/form' %>
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <%= image_tag(@artist.image_url) =%>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h1><%= @artist.name %></h1>
+              <%= link_to "Delete artist", artist_path(@artist), class: "btn btn-danger", method: :delete, data: { confirm: "all the songs will be deleted too" } %>
+              <%= link_to "Back to artists", artists_path, class: "btn btn-primary", role:"button" %>
+            </div>
+          </div>
+        </div>
+
+          <%= render 'songs/list_songs' %>
+          <div class="panel-footer">
+            <%= render 'songs/form' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

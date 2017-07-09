@@ -1,0 +1,7 @@
+// Place all the styles related to the Songs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.badge {background: red !important;}
+.badge a {color: white; font-size: 1.4em}
+.badge a:hover {color: red;}
