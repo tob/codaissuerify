@@ -16,7 +16,6 @@ function createNewSong(title) {
   listItem.addClass("list-group-item song");
   listItem.attr('id', songId);
 
-
   var space = document.createTextNode(" ");
 
   var badge = $('<span></span>');

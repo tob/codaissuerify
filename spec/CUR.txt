@@ -1,0 +1,4 @@
+curl -i -H "Accept: application/json" -X POST -d '{"name":"new_song_tobia"}' http://localhost:3000/artists/16/api/songs.json
+
+
+curl -i -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"name":"new_song_tobia"}' http://localhost:3000/artists/16/api/songs.json

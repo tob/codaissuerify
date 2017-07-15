@@ -38625,3 +38625,59 @@ Processing by ArtistsController#show as HTML
 Completed 200 OK in 269ms (Views: 263.4ms | ActiveRecord: 0.9ms)
 
 
+Started POST "/artists/16/api/songs.json" for 127.0.0.1 at 2017-07-15 15:15:29 +0200
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SongsController#create as JSON
+  Parameters: {"name"=>"new_song_tobia", "artist_id"=>"16", "song"=>{"name"=>"new_song_tobia"}}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "new_song_tobia"], ["created_at", "2017-07-15 13:15:31.081070"], ["updated_at", "2017-07-15 13:15:31.081070"], ["artist_id", 16]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 328ms (ActiveRecord: 17.0ms)
+
+
+  
+NameError (undefined local variable or method `song' for #<Api::SongsController:0x007ffd52e505b8>
+Did you mean?  @song):
+  
+app/controllers/api/songs_controller.rb:16:in `create'
+Started POST "/artists/16/api/songs.json" for 127.0.0.1 at 2017-07-15 15:15:53 +0200
+Processing by Api::SongsController#create as JSON
+  Parameters: {"name"=>"new_song_tobia", "artist_id"=>"16", "song"=>{"name"=>"new_song_tobia"}}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "new_song_tobia"], ["created_at", "2017-07-15 13:15:53.329086"], ["updated_at", "2017-07-15 13:15:53.329086"], ["artist_id", 16]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 273ms (ActiveRecord: 9.2ms)
+
+
+  
+NameError (undefined local variable or method `song' for #<Api::SongsController:0x007ffd521c5e88>
+Did you mean?  @song):
+  
+app/controllers/api/songs_controller.rb:16:in `create'
+Started POST "/artists/16/api/songs.json" for 127.0.0.1 at 2017-07-15 15:16:57 +0200
+Processing by Api::SongsController#create as JSON
+  Parameters: {"name"=>"new_song_tobia", "artist_id"=>"16", "song"=>{"name"=>"new_song_tobia"}}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "new_song_tobia"], ["created_at", "2017-07-15 13:16:57.464367"], ["updated_at", "2017-07-15 13:16:57.464367"], ["artist_id", 16]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 542ms (ActiveRecord: 7.4ms)
+
+
+  
+NameError (undefined local variable or method `song' for #<Api::SongsController:0x007ffd52f47db8>
+Did you mean?  @song):
+  
+app/controllers/api/songs_controller.rb:16:in `create'
+Started POST "/artists/16/api/songs.json" for 127.0.0.1 at 2017-07-15 15:17:36 +0200
+Processing by Api::SongsController#create as JSON
+  Parameters: {"name"=>"new_song_tobia", "artist_id"=>"16", "song"=>{"name"=>"new_song_tobia"}}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "new_song_tobia"], ["created_at", "2017-07-15 13:17:47.065988"], ["updated_at", "2017-07-15 13:17:47.065988"], ["artist_id", 16]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 37ms (Views: 0.4ms | ActiveRecord: 1.5ms)
+
+
