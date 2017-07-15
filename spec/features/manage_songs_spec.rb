@@ -1,18 +1,40 @@
 require 'rails_helper'
 
 feature 'Manage songs', js: true do
-      let(:artist) { create(:artist)}
-  scenario 'add a new song' do
-    # Point your browser towards the todo path
-    visit artist_path(artist.id)
+  let(:artist) { create(:artist)}
 
-    # Enter description in the text field
+scenarios = ["add a new song", "delete a song", "delete all songs"]
+
+  scenario 'add a new song' do
+    visit artist_path(artist.id)
     fill_in 'new-song', with: 'Rock around the clock via testing'
 
-    # Press enter (to submit the form)
+    sleep(1)
     page.execute_script("$('form').submit()")
 
-    # Expect the new task to be displayed in the list of tasks
+    sleep(1)
     expect(page).to have_content('Rock around the clock via testing')
+
+    sleep(3)
+
+
   end
+
+  scenario 'delete all songs' do
+    visit artist_path(artist.id)
+    #action goes here
+
+    sleep(1)
+    page.execute_script("$('form').submit()")
+
+    sleep(1)
+    expect(artist.songs.size).to eq(0)
+
+    sleep(3)
+  end
+
+
+
+
+
 end

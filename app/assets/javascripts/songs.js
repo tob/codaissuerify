@@ -12,7 +12,7 @@ function submitNewSong(event) {
 function createNewSong(title) {
   var songId = "song-" + nextNewSongId();
   var artistUrl = window.location.pathname;
-  var artistId = artistUrl.substring(artistUrl.lastIndexOf('/') + 1);
+   var artistId = artistUrl.substring(artistUrl.lastIndexOf('/') + 1);
 
   var newSong = {name: title, length: 12}
 
@@ -59,6 +59,11 @@ function createNewSong(title) {
   });
 }
 
+function artistId() {
+  var artistUrl = window.location.pathname;
+  var artistId = artistUrl.substring(artistUrl.lastIndexOf('/') + 1);
+  return artistId
+}
 
 function nextNewSongId() {
   return $(".song").length + 1;
@@ -67,13 +72,32 @@ function nextNewSongId() {
 // removing songs by class or by markup position
 function cleanUpSongs(event) {
   event.preventDefault();
-  $(".song").remove();
+
+  $( ".song" ).each(function() {
+    var songId = $(this).attr('id');
+    $(this).remove()
+    $.ajax({
+      type: "DELETE",
+      url: "/artists/" + artistId() + "/api/songs/" + songId + ".json",
+      contentType: "application/json",
+      dataType: "json"
+    });
+  });
+
 }
 
 function cleanThis(event) {
   event.preventDefault();
-  $(this).parent().parent().remove();
+  var songId = $(this).parent().parent().attr('id');
+  $(this).parent().parent().remove()
+  $.ajax({
+    type: "DELETE",
+    url: "/artists/" + artistId() + "/api/songs/" + songId + ".json",
+    contentType: "application/json",
+    dataType: "json"
+  });
 }
+
 
 // Tiding all the functions to buttons and links
 $(document).ready(function(){
