@@ -9,7 +9,11 @@
           <div class="row">
             <div class="col-md-3">
               <div class="thumbnail">
-                <%= image_tag(@artist.image_url) =%>
+                <% if @artist.image_url = true %>
+                <%= image_tag(@artist.image_url) %>
+                <% else %>
+                <p>No image</p>
+                <% end %>
               </div>
             </div>
             <div class="col-md-4">
