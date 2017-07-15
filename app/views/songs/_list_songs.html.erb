@@ -1,8 +1,12 @@
-<ul class="list-group">
+<ul class="list-group" id="all-songs">
   <% @artist.songs.each do |song| %>
-  <li class="list-group-item"><%= song.name =%>
+  <li class="list-group-item song" id="song-<%= song.id =%>"><%= song.name %>
       <span class="badge">
-        <%= link_to "<span class='glyphicon glyphicon-trash danger' aria-hidden='true'></span>".html_safe, artist_song_path(@artist, song.id), class: "", method: :delete, data: { confirm: "Are you sure?" } %></span>
+        <a href="" class="clean-this">
+          <span class='glyphicon glyphicon-trash danger' aria-hidden='true'></span> Clean this</a>
+      </span>
     </li>
   <% end %>
 </ul>
+
+<button type="button" class="btn btn-danger" id="clean-up" data-toggle="modal" data-target="#myModal">Delete all songs</button>
