@@ -28,7 +28,7 @@ skip_before_action :verify_authenticity_token
     if @song.destroy
       render status: 201, json: {
         message: "Song deleted",
-        song: song
+        song: @song
       }.to_json
     else
       render status: 422, json: {

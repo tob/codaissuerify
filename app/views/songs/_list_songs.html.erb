@@ -1,10 +1,9 @@
 <ul class="list-group" id="all-songs">
   <% @artist.songs.each do |song| %>
-  <li class="list-group-item song" id="song-<%= song.id =%>"><%= song.name %>
+  <li class="list-group-item song" id="<%= song.id =%>"><%= song.name %>
       <span class="badge">
-        <a href="" class="clean-this">
-          <span class='glyphicon glyphicon-trash danger' aria-hidden='true'></span> Clean this</a>
-          <span id="artistId"><%= @artist.id %></span>
+        <a href="" class="clean-this" id="<%= song.id =%>">
+          <span class='glyphicon glyphicon-trash danger' aria-hidden='true'></span> Delete</a>
       </span>
     </li>
   <% end %>
