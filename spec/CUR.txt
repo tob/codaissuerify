@@ -1,4 +1,7 @@
-curl -i -H "Accept: application/json" -X POST -d '{"name":"new_song_tobia"}' http://localhost:3000/artists/16/api/songs.json
-
-
+CREATE NEW SONG
 curl -i -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"name":"new_song_tobia"}' http://localhost:3000/artists/16/api/songs.json
+
+
+
+DELETE SONG
+curl -i -H "Accept: application/json" -H "Content-type: application/json" -X DELETE -d '{"id":"147"}' http://localhost:3000/artists/19/api/songs.json

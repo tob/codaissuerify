@@ -1,3 +1,5 @@
+
+
 // Submit new song
 function submitNewSong(event) {
   event.preventDefault();
@@ -23,33 +25,37 @@ function createNewSong(title) {
       song: newSong
     }),
     contentType: "application/json",
-    dataType: "json"
+    dataType: "json",
+    complete: function() {
+      location.reload(true);
+    }
   }).done(function(data) {
     console.log(data);
 
       var listItem = $("<li></li>");
-      listItem.addClass("list-group-item song");
+      listItem.addClass("list-group-item song list-group-item-success");
       listItem.attr('id', songId);
 
-      var space = document.createTextNode(' ');
+      // var space = document.createTextNode(' ');
+      //
+      // var badge = $('<span></span>');
+      // badge.addClass("badge");
 
-      var badge = $('<span></span>');
-      badge.addClass("badge");
+      // var delete_link = $('<a></a>');
+      // delete_link.attr('href','');
+      // delete_link.text('delete');
+      // delete_link.addClass("clean-this");
 
-      var delete_link = $('<a></a>');
-      delete_link.attr('href','');
-      delete_link.addClass("clean-this");
-
-      var trash = $('<span></span>');
-      trash.addClass("glyphicon glyphicon-trash danger");
-      trash.attr('aria-hidden', true);
+      // var trash = $('<span></span>');
+      // trash.addClass("glyphicon glyphicon-trash danger");
+      // trash.attr('aria-hidden', true);
 
       listItem.append(title);
-      listItem.append(space);
-      listItem.append(badge);
-      badge.append(delete_link);
-      delete_link.append(trash);
-      delete_link.append(" Clean this");
+      // listItem.append(space);
+      // listItem.append(badge);
+      // badge.append(delete_link);
+      // delete_link.append(trash);
+
 
       $("#all-songs").append( listItem );
     }).fail(function(error) {
