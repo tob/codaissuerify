@@ -45619,3 +45619,72 @@ Processing by Api::SongsController#destroy as JSON
 Completed 201 Created in 10ms (Views: 0.2ms | ActiveRecord: 4.5ms)
 
 
+Started GET "/artists/25" for 127.0.0.1 at 2017-07-16 20:09:18 +0200
+  [1m[35m (12.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 25]]
+  Rendered songs/_list_songs.html.erb (64.8ms)
+  Rendered songs/_form.html.erb (1167.4ms)
+  Rendered artists/show.html.erb within layouts/application (1246.8ms)
+Completed 200 OK in 6323ms (Views: 6248.3ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/artists/25/api/songs.json" for 127.0.0.1 at 2017-07-16 20:09:32 +0200
+Processing by Api::SongsController#create as JSON
+  Parameters: {"song"=>{"name"=>".,svmk e", "length"=>12}, "artist_id"=>"25"}
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", ".,svmk e"], ["created_at", "2017-07-16 18:09:33.007865"], ["updated_at", "2017-07-16 18:09:33.007865"], ["artist_id", 25]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 60ms (Views: 0.3ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/artists/25" for 127.0.0.1 at 2017-07-16 20:09:33 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mArtist Load (3.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 25]]
+  Rendered songs/_list_songs.html.erb (5.5ms)
+  Rendered songs/_form.html.erb (4.4ms)
+  Rendered artists/show.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 169ms (Views: 157.3ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/artists/25/api/songs.json" for 127.0.0.1 at 2017-07-16 20:09:38 +0200
+Processing by Api::SongsController#create as JSON
+  Parameters: {"song"=>{"name"=>"lknlknvaev", "length"=>12}, "artist_id"=>"25"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "songs" ("name", "created_at", "updated_at", "artist_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "lknlknvaev"], ["created_at", "2017-07-16 18:09:38.396514"], ["updated_at", "2017-07-16 18:09:38.396514"], ["artist_id", 25]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 24ms (Views: 0.3ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/artists/25" for 127.0.0.1 at 2017-07-16 20:09:38 +0200
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = $1[0m  [["artist_id", 25]]
+  Rendered songs/_list_songs.html.erb (10.4ms)
+  Rendered songs/_form.html.erb (5.3ms)
+  Rendered artists/show.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 538ms (Views: 527.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-07-16 20:09:48 +0200
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 218ms (Views: 211.7ms | ActiveRecord: 0.4ms)
+
+
