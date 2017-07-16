@@ -8,8 +8,12 @@
         <div class="panel-heading">
           <div class="row">
             <div class="col-md-3">
-              <div class="thumbnail">
+              <div class="thumbnail artist" id="'<%= @artist.id %>'">
+                <% if @artist.image_url == true %>
                 <%= image_tag(@artist.image_url) =%>
+                <% else %>
+                <p>Please add an image</p>
+                <% end %>
               </div>
             </div>
             <div class="col-md-4">

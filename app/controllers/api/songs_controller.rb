@@ -9,12 +9,13 @@ skip_before_action :verify_authenticity_token
 
   def create
     set_artist
-    @song = @artist.songs.build(song_params)
+    @song = @artist.songs.create(song_params)
     if @song.save
       render status: 201, json: {
         message: "Song added",
         song: @song
       }.to_json
+      flash[:notice] = "saved successful"
     else
       render status: 422, json: {
         errors: song.errors
@@ -28,7 +29,7 @@ skip_before_action :verify_authenticity_token
     if @song.destroy
       render status: 201, json: {
         message: "Song deleted",
-        song: song
+        song: @song
       }.to_json
     else
       render status: 422, json: {
@@ -50,7 +51,7 @@ skip_before_action :verify_authenticity_token
     params
       .require(:song)
       .permit(
-        :name, :length
+        :name, :length, :artist_id
       )
   end
 end
