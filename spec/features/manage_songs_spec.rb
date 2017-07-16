@@ -18,14 +18,26 @@ feature 'CRUD songs', js: true do
 
     # sleep(3)
   end
+
+
   scenario 'delete single song' do
-    artist.song.last.destroy
-    expect { song.reload }.to raise_error ActiveRecord::RecordNotFound
+
+    sngbfr_del = @artist.songs.length
+
+    find(".clean-this", match: :first).click
+    sngaftr_del = artist.songs.length
+
+    expect()
+
 
   end
 
+  scenario 'delete all songs' do
+    visit artist_path(artist.id)
 
+    click_link('clean-up')
+    expect(page).to have_no_css('.song')
 
-
+  end
 
 end
