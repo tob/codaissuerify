@@ -1,6 +1,8 @@
+Photo.destroy_all
+Song.destroy_all
 Artist.destroy_all
 
-band_images = ['http://res.cloudinary.com/djxbktwxl/image/upload/v1499514795/ledzeppelin1973_gruen_webuseonly_qisl6i.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514934/300x300_pfiy7k.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514873/Current_28792id_001_large_e3lclg.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514839/rs-134713-20131007-stones2-x306-1381179560-1381341128_on4ixz.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514762/TheBeatles_bvb4na.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514719/6bec6f659fef26410d3df95dadff156a--iggy-pop-iggy-iggy_xag3bd.jpg']
+band_images = ['http://res.cloudinary.com/dnwkjak4p/image/upload/v1476007276/28dab8dd748210a53c77bb284558a5ce5905ca6a_git9a9.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514795/ledzeppelin1973_gruen_webuseonly_qisl6i.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514934/300x300_pfiy7k.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514873/Current_28792id_001_large_e3lclg.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514839/rs-134713-20131007-stones2-x306-1381179560-1381341128_on4ixz.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514762/TheBeatles_bvb4na.jpg','http://res.cloudinary.com/djxbktwxl/image/upload/v1499514719/6bec6f659fef26410d3df95dadff156a--iggy-pop-iggy-iggy_xag3bd.jpg']
 
 song_titles = [
   'In Twilight', 'The Shoreline', 'The Tide', 'The Dive', 'The Swell', 'A Silver Cloud', 'Sunshine', 'In Bloom', 'Above The Auroras', 'Through The Silence', 'Into The Heavens', 'The Wind In The Trees', 'A Stillness In The Woods', 'Under The Shade', 'A Silver Cloud (Goodnight Mix)', 'In Twilight (The Dream Mix)', 'Through The Silence (The Dawn Mix)', 'Indigo', 'Violet', 'After Violet',
@@ -11,10 +13,12 @@ artists = []
 artists_count = Artist.all.length
 songs_count = Song.all.length
 
-for  band in 0..5
-  band = Artist.create!({name: Faker::Name.first_name, image_url: band_images[band]})
+for band_i in 0..5
+  band = Artist.create!({name: Faker::Name.first_name})
+  photo = Photo.create!(remote_image_url: band_images[band_i], artist: band)
   artists << band
 end
+
 
 for song in 0 ... song_titles.size
     count_length = rand(19..45)

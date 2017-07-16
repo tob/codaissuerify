@@ -2,7 +2,10 @@
 <div class="row">
   <% @artist.each do |artist| %>
   <div class="col-sm-6 col-md-3">
-      <%= link_to image_tag(artist.image_url), artist, class: "thumbnail" =%>
+    <% artist.photos.each do |photo| %>
+      <%= link_to image_tag(photo.image), artist, class: "thumbnail" =%>
+    <% end %>
+
       <div class="caption">
         <h3><%= artist.name %></h3>
         <p><%= link_to "View", artist, class: "btn btn-primary", role:"button" %>

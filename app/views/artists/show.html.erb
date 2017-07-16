@@ -9,8 +9,10 @@
           <div class="row">
             <div class="col-md-3">
               <div class="thumbnail artist" id="'<%= @artist.id %>'">
-                <% if @artist.respond_to?(:image_url) == true %>
-                <%= image_tag(@artist.image_url) =%>
+                <% if @artist.respond_to?(:image) == true %>
+                <% @artist.photos.each do |photo| %>
+                  <%= link_to image_tag(photo.image), class: "thumbnail" =%>
+                <% end %>
                 <% else %>
                 <p>Please add an image</p>
                 <% end %>
